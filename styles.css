@@ -9,8 +9,8 @@
   --dark: #111110;
   --dark-rule: rgba(242, 238, 229, .27);
   --mono: "Special Elite", "Courier New", monospace;
-  --display: "Archivo Black", "Arial Black", sans-serif;
-  --poster: "Archivo Black", "Arial Black", sans-serif;
+  --display: "Oswald", "Arial Narrow", sans-serif;
+  --poster: "Oswald", "Arial Narrow", sans-serif;
   --nav-width: 68px;
   --motion: cubic-bezier(.2,.7,.2,1);
 }
@@ -410,7 +410,7 @@ h2 span { color: #aaa69d; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
-/* Site-wide type system: Archivo Black for display/UI; Special Elite for typewriter copy. */
+/* Site-wide type system: Oswald condensed display/UI; Special Elite for typewriter copy. */
 h1, h2, h3, h4, h5, h6,
 .section-index, .eyebrow,
 .nav-number, .nav-label, .nav-caption,
@@ -1650,4 +1650,37 @@ h1, h2, h3, h4, h5, h6,
     letter-spacing: 0 !important;
     transform: translate(-50%, -50%) scaleY(1.08) !important;
   }
+}
+
+/* Condensed display typography with comfortable spacing to protect legibility. */
+h1, h2, h3, h4, h5, h6,
+.section-index, .eyebrow,
+.nav-number, .nav-label, .nav-caption,
+.title-number, .title-word, .band-wordmark,
+.brand-english, .streaming-links a,
+.release-info h3, .release-type, .release-listen,
+.outlined-link, .submit-button, .booking-form label, .form-heading {
+  font-family: var(--display);
+  font-stretch: normal;
+  letter-spacing: .015em !important;
+}
+.listen-copy .title-word {
+  transform: none !important;
+  letter-spacing: .015em !important;
+}
+.brand-banner .brand-english {
+  font-family: var(--display) !important;
+  letter-spacing: .01em !important;
+  transform: translate(-50%, -50%) scaleY(1.22) !important;
+}
+.brand-english { font-weight: 600 !important; }
+.hero-identity .band-wordmark {
+  font-family: var(--display) !important;
+  letter-spacing: .005em !important;
+  transform: none !important;
+}
+.hero-identity .hero-kicker {
+  font-family: var(--display) !important;
+  letter-spacing: .18em !important;
+  transform: none !important;
 }
