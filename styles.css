@@ -600,3 +600,78 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
     line-height: 1.45;
   }
 }
+
+
+/* Composition pass: the illustrated trees occupy only the right column. */
+@media (min-width: 1450px) {
+  .listen-layout {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-top: 8px;
+    overflow: visible;
+  }
+  .listen-art {
+    top: auto;
+    bottom: -22px;
+    right: clamp(-205px, -12vw, -180px);
+    width: 720px;
+    height: clamp(720px, 86vh, 780px);
+    display: block;
+    overflow: visible;
+    pointer-events: none;
+  }
+  .listen-art .tree-cutout {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+  .listen-art .yellow-block {
+    z-index: 0;
+    left: 34%;
+    right: auto;
+    top: 28%;
+    width: 15%;
+    height: 29%;
+  }
+  .listen-art .art-label { top: 4%; right: 3%; }
+  .listen-art .pink-mark { top: 11%; right: 3%; }
+  .listen-art .art-scroll-arrow { top: 10%; right: 4%; }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .listen-art {
+    top: auto;
+    bottom: -18px;
+    right: clamp(-175px, -12vw, -115px);
+    width: clamp(560px, 53vw, 680px);
+    height: clamp(620px, 85vh, 750px);
+    pointer-events: none;
+  }
+  .listen-art .tree-cutout { width: 100%; height: 100%; object-fit: fill; }
+  .listen-art .yellow-block { left: 34%; top: 28%; width: 15%; height: 29%; }
+  .listen-art .art-label { right: 3%; }
+  .listen-art .pink-mark { right: 3%; }
+}
+@media (max-width: 980px) and (min-width: 621px) {
+  .listen-art {
+    top: auto;
+    bottom: -10px;
+    right: -90px;
+    width: min(56vw, 520px);
+    height: clamp(440px, 68vh, 600px);
+    pointer-events: none;
+  }
+  .listen-art .tree-cutout { width: 100%; height: 100%; object-fit: fill; }
+  .listen-art .yellow-block { left: 34%; top: 28%; width: 15%; height: 29%; }
+}
+@media (max-width: 620px) {
+  .listen-art {
+    top: -12px;
+    right: -70px;
+    width: min(104vw, 430px);
+    height: 370px;
+    pointer-events: none;
+  }
+  .listen-art .tree-cutout { width: 100%; height: 100%; object-fit: fill; }
+  .listen-art .yellow-block { left: 34%; top: 28%; width: 15%; height: 29%; }
+}
