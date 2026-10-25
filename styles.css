@@ -1729,3 +1729,41 @@ h1, h2, h3, h4, h5, h6,
     transform: translate(-50%, -50%) scaleY(1.1) !important;
   }
 }
+
+/* Use the supplied English lettering as a transparent image, centered at the Hindi wordmark's midpoint. */
+.brand-banner canvas.brand-english {
+  display: block;
+  width: min(38vw, 520px) !important;
+  height: auto !important;
+  aspect-ratio: auto !important;
+  max-width: none !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  letter-spacing: normal !important;
+  object-fit: contain;
+  left: 75% !important;
+  right: auto !important;
+  top: calc(50% + 30px) !important;
+  transform: translate(-50%, -50%) !important;
+  background: transparent !important;
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .brand-banner canvas.brand-english {
+    width: min(37vw, 460px) !important;
+    top: calc(50% + 17px) !important;
+  }
+}
+@media (max-width: 980px) and (min-width: 621px) {
+  .brand-banner canvas.brand-english {
+    width: min(34vw, 300px) !important;
+    left: 75% !important;
+    top: calc(50% + 17px) !important;
+  }
+}
+@media (max-width: 620px) {
+  .brand-banner canvas.brand-english {
+    width: min(43vw, 175px) !important;
+    left: 75% !important;
+    top: 50% !important;
+  }
+}
