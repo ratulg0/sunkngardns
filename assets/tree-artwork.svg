@@ -1,4 +1,5 @@
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="2048" viewBox="0 0 2048 2048" enable-background="new 0 0 2048 2048" xml:space="preserve" height="2048">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="2248" viewBox="-100 -390 2248 2438" enable-background="new -100 -390 2248 2438" xml:space="preserve" height="2438">
+<g id="original-artwork">
 <path fill="none" opacity="1.000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.000000" d="
 M394.500000,551.000000 
 	C397.633789,561.796265 403.318115,571.732056 403.778320,583.489075 
@@ -13592,4 +13593,13 @@ M1234.000000,1745.000000
 M1300.000000,756.000061 
 	C1299.333374,756.333435 1298.666748,756.666748 1298.000000,757.000061 
 "></path>
+</g>
+<defs>
+  <clipPath id="top-source-area" clipPathUnits="userSpaceOnUse">
+    <path d="M -100,0 L 2148,0 L 2148,42 C 1940,55 1840,108 1660,166 C 1450,246 1270,324 1124,350 C 1084,362 1052,370 1024,370 C 996,370 964,362 924,350 C 778,324 598,246 388,166 C 208,108 108,55 -100,42 Z"/>
+  </clipPath>
+</defs>
+<g id="reflected-upper-canopy" transform="scale(1,-1)">
+  <g clip-path="url(#top-source-area)"><use href="#original-artwork" xlink:href="#original-artwork"/></g>
+</g>
 </svg>
