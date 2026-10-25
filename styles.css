@@ -282,6 +282,7 @@ h2 span { color: #aaa69d; }
   .nav-items { flex: 1 1 auto; min-height: 0; margin-top: 28px; margin-bottom: 0; justify-content: flex-start; }
   .nav-link { display: grid; grid-template-columns: 38px 1fr; justify-content: start; justify-items: start; gap: 10px; min-height: 69px; padding: 14px 0; border-bottom: 1px solid rgba(242,238,229,.14); }
   .nav-link::before { left: -23px; width: 3px; }
+  .nav-link::after { display: none; }
   .nav-number { padding-top: 4px; font-size: 10px; color: #b7b2a8; }
   .nav-label { font-size: 21px; }
   .nav-link:hover, .nav-link.is-active { color: var(--pink); }
