@@ -1224,3 +1224,64 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
   #streaming-links .platform-icon { filter: drop-shadow(0 0 2px rgba(241, 59, 104, .18)); }
   #streaming-links a span:not(.external-arrow) { text-shadow: 0 0 2px rgba(241, 59, 104, .14); }
 }
+
+/* Current polish: stronger content-shaped pink glow, birds in the clear gap beside the copy. */
+@keyframes platform-icon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(241, 59, 104, .34));
+  }
+  50% {
+    filter: drop-shadow(0 0 6px rgba(241, 59, 104, .76))
+            drop-shadow(0 0 14px rgba(241, 59, 104, .42));
+  }
+}
+@keyframes platform-label-glow {
+  0%, 100% {
+    text-shadow: 0 0 2px rgba(241, 59, 104, .26);
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(241, 59, 104, .68),
+                 0 0 12px rgba(241, 59, 104, .36);
+  }
+}
+#streaming-links .platform-icon {
+  filter: drop-shadow(0 0 3px rgba(241, 59, 104, .34));
+}
+#streaming-links a:hover .platform-icon,
+#streaming-links a:focus-visible .platform-icon {
+  filter: drop-shadow(0 0 7px rgba(241, 59, 104, .86))
+          drop-shadow(0 0 17px rgba(241, 59, 104, .48));
+}
+#streaming-links a span:not(.external-arrow) {
+  text-shadow: 0 0 3px rgba(241, 59, 104, .26);
+}
+#streaming-links a:hover span:not(.external-arrow),
+#streaming-links a:focus-visible span:not(.external-arrow) {
+  text-shadow: 0 0 7px rgba(241, 59, 104, .82),
+               0 0 15px rgba(241, 59, 104, .42);
+}
+
+/* Keep the bird brushstrokes at their current height, but move them into the open space
+   between the Listen copy and the tree canopy instead of over the foliage. */
+@media (min-width: 1450px) {
+  .listen-art .bird-flock {
+    left: 12% !important;
+    right: auto !important;
+    top: 1% !important;
+    transform: none !important;
+    z-index: 5;
+    width: 178px !important;
+    height: auto;
+  }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .listen-art .bird-flock {
+    left: 8% !important;
+    right: auto !important;
+    top: 1% !important;
+    transform: none !important;
+    z-index: 5;
+    width: clamp(135px, 12vw, 165px) !important;
+    height: auto;
+  }
+}
