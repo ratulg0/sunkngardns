@@ -146,7 +146,7 @@ h2 span { color: #aaa69d; }
 .release-card { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; }
 .release-art { display: block; position: relative; width: 100%; aspect-ratio: 1; max-width: 210px; background: var(--paper-shade); overflow: hidden; border: 1px solid rgba(18,18,17,.13); isolation: isolate; }
 .release-art img { position: absolute; display: block; max-width: none; width: 146.3%; height: 146.3%; object-fit: cover; transition: transform .35s var(--motion); }
-.release-art--rukhsar img { left: -25%; top: -43%; }
+.release-art--rukhsar img { left: -25%; top: -43%; mix-blend-mode: multiply; }
 .release-art--sarhadein img { left: -12.5%; top: -25%; width: 128%; height: 128%; mix-blend-mode: multiply; }
 .release-art--sarhadein::after { content: ""; position: absolute; z-index: 2; top: 0; right: 8%; width: 12px; height: 39%; background: var(--pink); mix-blend-mode: multiply; pointer-events: none; }
 .release-art:hover img { transform: scale(1.015); }
@@ -202,11 +202,23 @@ h2 span { color: #aaa69d; }
   .section { padding-left: clamp(60px, 5vw, 84px); padding-right: clamp(60px, 5vw, 84px); }
   .section-index { left: clamp(60px, 5vw, 84px); }
   .listen-layout { min-height: 174px; }
-  .listen-art { top: -105px; height: 292px; }
+  .listen-art { top: -105px; height: 352px; }
   .tree-cutout { height: 100%; }
-  .hero-identity .hero-logo { width: 82px; height: 86px; }
-  .about-layout { min-height: 194px; }
-  .about-visual, .about-visual img { min-height: 180px; height: 180px; }
+  .hero-identity .hero-logo { width: 116px; height: auto; aspect-ratio: 1809 / 2048; }
+  .hero-identity .hero-kicker { font-size: 8px; }
+  .intro-copy { max-width: 420px; font-size: 11px; }
+  .streaming-links a { font-size: 9px; gap: 9px; }
+  .platform-icon { width: 27px; height: 27px; flex-basis: 27px; }
+  .body-copy { font-size: 11px; }
+  .music-aside { font-size: 10px; }
+  .release-type { font-size: 8px; }
+  .release-listen { font-size: 9px; }
+  .booking-description { font-size: 10px; }
+  .booking-form label { font-size: 8px; }
+  .booking-form input, .booking-form textarea { font-size: 11px; }
+  .about-layout { min-height: 230px; }
+  .about-visual { min-height: 230px; height: 230px; }
+  .about-visual img { min-height: 0; height: 125%; }
 }
 @media (max-width: 980px) and (min-width: 621px) {
   :root { --nav-width: 58px; }
@@ -222,7 +234,8 @@ h2 span { color: #aaa69d; }
   .about-visual, .about-visual img { min-height: 160px; height: 160px; }
   .music-layout { grid-template-columns: minmax(130px, .7fr) minmax(0, 1.5fr); gap: 18px; }
   .release-list { gap: 13px; }
-  .release-info h3 { font-size: 20px; }
+  .release-art { max-width: 270px; }
+  .release-info h3 { font-size: 24px; }
   .booking-content { grid-template-columns: minmax(0, .9fr) minmax(240px, 1fr); gap: 22px; }
   .site-footer { margin-left: -28px; margin-right: -28px; padding-left: 28px; padding-right: 28px; }
 }
