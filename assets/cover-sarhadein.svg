@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360">
+<rect width="360" height="360" fill="#f2eee5"/><rect x="0" y="0" width="360" height="360" fill="#e8e0d1"/>
+<path d="M0 274 L360 237 V360 H0Z" fill="#151513"/><path d="M28 36 H128 V128 H28Z" fill="#ed3b68"/><path d="M248 0 H360 V111 H248Z" fill="#d7b814" opacity=".9"/>
+<g stroke="#171715" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M57 252 C81 213 87 170 111 144 C132 121 165 121 183 143 C196 160 199 181 214 194 C232 209 260 212 274 232 L297 258"/>
+<path d="M85 235 C71 214 65 195 69 178 L89 158 L105 163 L117 189 L135 203 L147 239"/>
+<path d="M183 148 C199 125 209 99 215 75 L234 54 L247 66 L240 93 L258 115 L250 151"/>
+<path d="M203 189 C226 174 245 170 271 179 L286 193 L281 211 L260 218"/>
+<path d="M112 252 L105 290 M139 247 L147 292 M254 242 L251 292 M282 252 L292 292"/>
+<path d="M69 178 L48 163 L38 146 L48 135 L62 144 L71 158 M234 54 L228 35 L239 23 L254 30 L258 45"/>
+</g>
+<path d="M106 147 Q117 132 130 143 Q142 156 131 173 Q119 180 110 165Z" fill="#171715"/><path d="M220 76 Q234 63 241 77 L239 96 L226 103 L218 91Z" fill="#171715"/>
+<g stroke="#171715" stroke-width="1.5" opacity=".75"><path d="M95 222 l-11 10 m17 -1 l-11 11 m33 -3 l-9 12 m111 -58 l13 -8 m-6 18 l15 -8 m10 22 l14 -2 m-17 11 l18 -3 m-41 -83 l-8 13 m25 -19 l-6 11"/></g>
+<g fill="#171715"><circle cx="40" cy="209" r="2"/><circle cx="53" cy="230" r="1.4"/><circle cx="75" cy="249" r="2"/><circle cx="161" cy="265" r="1.4"/><circle cx="182" cy="291" r="1.6"/><circle cx="213" cy="272" r="2"/><circle cx="319" cy="248" r="1.6"/><circle cx="341" cy="273" r="1.6"/></g>
+<text x="17" y="18" fill="#171715" font-size="8" letter-spacing="2" font-family="monospace">S / G</text><text x="18" y="343" fill="#f2eee5" font-size="8" letter-spacing="2" font-family="monospace">RELEASE 002 / SUNKNGARDNS</text>
+</svg>
