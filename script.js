@@ -1,13 +1,4 @@
 (() => {
-  // Use the supplied source artwork when present; keep an in-repo fallback during setup.
-  document.addEventListener('error', (event) => {
-    const image = event.target;
-    if (image instanceof HTMLImageElement && image.dataset.fallback && !image.dataset.fallbackApplied) {
-      image.dataset.fallbackApplied = 'true';
-      image.src = image.dataset.fallback;
-    }
-  }, true);
-
   const nav = document.querySelector('#site-nav');
   const menuOpen = document.querySelector('#menu-open');
   const menuClose = document.querySelector('#menu-close');
