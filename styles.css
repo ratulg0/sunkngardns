@@ -791,3 +791,85 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
   .streaming-links { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .streaming-links a { font-size: 9px; }
 }
+
+/* Center the brand stack on the usable canvas and spread the platform shelf to the wordmark edge. */
+@media (min-width: 1450px) {
+  .hero-identity {
+    transform: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .hero-type {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .streaming-strip {
+    width: calc(100% + clamp(12px, 2vw, 30px));
+  }
+  #streaming-links {
+    width: min(960px, 100%);
+    max-width: 960px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: 48px 48px;
+    column-gap: 0;
+    row-gap: 0;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+  #streaming-links a {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 0 8px 0 0;
+    border-right: 1px solid var(--rule);
+    font-size: clamp(12px, .92vw, 15px);
+    white-space: nowrap;
+  }
+  #streaming-links .platform-icon {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+  /* Row one: the five established platforms, with SoundCloud at the far right. */
+  #streaming-links a:nth-of-type(8) { grid-column: 5; grid-row: 1; border-right: 0; padding-right: 0; }
+  /* Row two: the three newly added services beneath Bandcamp, YouTube and Apple Music. */
+  #streaming-links a:nth-of-type(5) { grid-column: 2; grid-row: 2; }
+  #streaming-links a:nth-of-type(6) { grid-column: 3; grid-row: 2; }
+  #streaming-links a:nth-of-type(7) { grid-column: 4; grid-row: 2; border-right: 0; padding-right: 0; }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .hero-identity {
+    transform: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #streaming-links {
+    width: min(100%, 900px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: 46px 46px;
+    column-gap: 0;
+    row-gap: 0;
+    justify-content: stretch;
+    align-items: stretch;
+  }
+  #streaming-links a {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    gap: 5px;
+    padding-right: 7px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  #streaming-links .platform-icon { width: 36px; height: 36px; flex-basis: 36px; }
+  #streaming-links a:nth-of-type(8) { grid-column: 5; grid-row: 1; border-right: 0; padding-right: 0; }
+  #streaming-links a:nth-of-type(5) { grid-column: 2; grid-row: 2; }
+  #streaming-links a:nth-of-type(6) { grid-column: 3; grid-row: 2; }
+  #streaming-links a:nth-of-type(7) { grid-column: 4; grid-row: 2; border-right: 0; padding-right: 0; }
+}
