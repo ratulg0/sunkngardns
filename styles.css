@@ -9,8 +9,8 @@
   --dark: #111110;
   --dark-rule: rgba(242, 238, 229, .27);
   --mono: "Special Elite", "Courier New", monospace;
-  --display: "League Gothic", "Arial Narrow", sans-serif;
-  --poster: "League Gothic", "Arial Narrow", sans-serif;
+  --display: "Changa One", sans-serif;
+  --poster: "Changa One", sans-serif;
   --nav-width: 68px;
   --motion: cubic-bezier(.2,.7,.2,1);
 }
@@ -410,7 +410,7 @@ h2 span { color: #aaa69d; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
-/* Site-wide type system: Teko for display/UI; Special Elite for typewriter copy. */
+/* Site-wide type system: Changa One for display/UI; Special Elite for typewriter copy. */
 h1, h2, h3, h4, h5, h6,
 .section-index, .eyebrow,
 .nav-number, .nav-label, .nav-caption,
