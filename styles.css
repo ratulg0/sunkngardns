@@ -1118,29 +1118,59 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
   #streaming-links { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 8px; }
 }
 
-/* Content-shaped pink glow: shadow the logo and label, never the button box. */
-@keyframes platform-pink-pulse {
-  0%, 100% {
-    filter: drop-shadow(0 0 0 rgba(241, 59, 104, 0));
-    text-shadow: 0 0 0 rgba(241, 59, 104, 0);
-  }
-  50% {
-    filter: drop-shadow(0 0 5px rgba(241, 59, 104, .48)) drop-shadow(0 0 10px rgba(241, 59, 104, .2));
-    text-shadow: 0 0 5px rgba(241, 59, 104, .38), 0 0 11px rgba(241, 59, 104, .17);
-  }
+/* Content-only platform emphasis: shadows hug the logo silhouettes and label glyphs. */
+@keyframes platform-icon-glow {
+  0%, 100% { filter: drop-shadow(0 0 1px rgba(241, 59, 104, .16)); }
+  50% { filter: drop-shadow(0 0 4px rgba(241, 59, 104, .48)) drop-shadow(0 0 9px rgba(241, 59, 104, .2)); }
+}
+@keyframes platform-label-glow {
+  0%, 100% { text-shadow: 0 0 1px rgba(241, 59, 104, .12); }
+  50% { text-shadow: 0 0 4px rgba(241, 59, 104, .48), 0 0 9px rgba(241, 59, 104, .2); }
 }
 #streaming-links a {
   position: relative;
   box-sizing: border-box;
   min-height: 56px;
   padding: 6px 10px !important;
-  border: 0 !important;
-  border-radius: 0;
+  border: none !important;
+  outline: none;
+  border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
-  animation: none;
-  transition: color .22s ease, translate .22s ease;
+  animation: none !important;
   text-decoration: none;
+  transition: color .22s ease, translate .22s ease;
+}
+#streaming-links a::before,
+#streaming-links a::after,
+#streaming-links a span::before,
+#streaming-links a span::after {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+}
+#streaming-links .platform-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 2px rgba(241, 59, 104, .18));
+  animation: platform-icon-glow 3.6s ease-in-out infinite;
+  transition: transform .22s ease, color .22s ease, filter .22s ease;
+}
+#streaming-links a span:not(.external-arrow) {
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: 0 0 2px rgba(241, 59, 104, .14);
+  animation: platform-label-glow 3.6s ease-in-out infinite;
+  transition: text-shadow .22s ease, color .22s ease;
 }
 #streaming-links a:nth-of-type(2) .platform-icon,
 #streaming-links a:nth-of-type(2) span:not(.external-arrow) { animation-delay: -.7s; }
@@ -1153,22 +1183,11 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
 #streaming-links a:nth-of-type(6) .platform-icon,
 #streaming-links a:nth-of-type(6) span:not(.external-arrow) { animation-delay: -1.05s; }
 
-#streaming-links .platform-icon {
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
-  filter: drop-shadow(0 0 3px rgba(241, 59, 104, .2));
-  animation: platform-pink-pulse 3.6s ease-in-out infinite;
-  transition: transform .22s ease, color .22s ease, filter .22s ease;
-}
-#streaming-links a span:not(.external-arrow) {
-  text-shadow: 0 0 3px rgba(241, 59, 104, .16);
-  animation: platform-pink-pulse 3.6s ease-in-out infinite;
-  transition: text-shadow .22s ease, color .22s ease;
-}
 #streaming-links a:hover,
 #streaming-links a:focus-visible {
   color: var(--pink);
+  border: none !important;
+  outline: none !important;
   background: transparent !important;
   box-shadow: none !important;
   translate: 0 -2px;
@@ -1176,94 +1195,32 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
 #streaming-links a:hover .platform-icon,
 #streaming-links a:focus-visible .platform-icon {
   color: var(--pink);
-  filter: drop-shadow(0 0 6px rgba(241, 59, 104, .7)) drop-shadow(0 0 13px rgba(241, 59, 104, .42));
+  filter: drop-shadow(0 0 5px rgba(241, 59, 104, .64)) drop-shadow(0 0 12px rgba(241, 59, 104, .34));
   transform: scale(1.08);
   animation-play-state: paused;
 }
 #streaming-links a:hover span:not(.external-arrow),
 #streaming-links a:focus-visible span:not(.external-arrow) {
   color: var(--pink);
-  text-shadow: 0 0 5px rgba(241, 59, 104, .58), 0 0 12px rgba(241, 59, 104, .3);
+  text-shadow: 0 0 5px rgba(241, 59, 104, .62), 0 0 12px rgba(241, 59, 104, .3);
   animation-play-state: paused;
 }
-#streaming-links a:focus-visible {
-  outline: 2px solid var(--pink);
-  outline-offset: 3px;
+#streaming-links a:focus-visible span:not(.external-arrow) {
+  text-decoration: underline;
+  text-decoration-color: var(--pink);
+  text-underline-offset: 4px;
 }
 @media (max-width: 1449px) and (min-width: 981px) {
   #streaming-links a { min-height: 52px; padding: 5px 8px !important; }
   #streaming-links .platform-icon { width: 42px; height: 42px; flex-basis: 42px; }
 }
 @media (max-width: 980px) {
-  #streaming-links a { min-height: 50px; padding: 5px 7px !important; }
+  #streaming-links a { min-height: 50px; padding: 5px 7px !important; white-space: normal; }
   #streaming-links .platform-icon { width: 34px; height: 34px; flex-basis: 34px; }
-  #streaming-links a { white-space: normal; }
 }
 @media (prefers-reduced-motion: reduce) {
   #streaming-links .platform-icon,
-  #streaming-links a span:not(.external-arrow) { animation: none; transition: none; }
-  #streaming-links .platform-icon { filter: none; }
-  #streaming-links a span:not(.external-arrow) { text-shadow: none; }
-}
-@keyframes platform-pink-pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 1px rgba(241, 59, 104, .08), 0 0 5px rgba(241, 59, 104, .08);
-  }
-  50% {
-    box-shadow: 0 0 0 1px rgba(241, 59, 104, .2), 0 0 15px 2px rgba(241, 59, 104, .24), 0 0 28px 4px rgba(241, 59, 104, .09);
-  }
-}
-#streaming-links a {
-  position: relative;
-  box-sizing: border-box;
-  min-height: 56px;
-  padding: 6px 10px !important;
-  border: 1px solid rgba(241, 59, 104, .14) !important;
-  border-radius: 7px;
-  background: rgba(241, 59, 104, .035);
-  box-shadow: 0 0 0 1px rgba(241, 59, 104, .08), 0 0 5px rgba(241, 59, 104, .08);
-  animation: platform-pink-pulse 3.6s ease-in-out infinite;
-  transition: color .22s ease, background-color .22s ease, box-shadow .22s ease, translate .22s ease;
-  text-decoration: none;
-}
-#streaming-links a:nth-of-type(2) { animation-delay: -.7s; }
-#streaming-links a:nth-of-type(3) { animation-delay: -1.4s; }
-#streaming-links a:nth-of-type(4) { animation-delay: -2.1s; }
-#streaming-links a:nth-of-type(5) { animation-delay: -2.8s; }
-#streaming-links a:nth-of-type(6) { animation-delay: -1.05s; }
-#streaming-links .platform-icon {
-  width: 48px;
-  height: 48px;
-  flex: 0 0 48px;
-  transition: transform .22s ease, color .22s ease;
-}
-#streaming-links a:hover,
-#streaming-links a:focus-visible {
-  color: var(--pink);
-  background: rgba(241, 59, 104, .1);
-  box-shadow: 0 0 0 1px rgba(241, 59, 104, .42), 0 0 17px 3px rgba(241, 59, 104, .32), 0 0 34px 7px rgba(241, 59, 104, .14);
-  animation-play-state: paused;
-  translate: 0 -2px;
-}
-#streaming-links a:hover .platform-icon,
-#streaming-links a:focus-visible .platform-icon {
-  color: var(--pink);
-  transform: scale(1.06);
-}
-#streaming-links a:focus-visible {
-  outline: 2px solid var(--pink);
-  outline-offset: 3px;
-}
-@media (max-width: 1449px) and (min-width: 981px) {
-  #streaming-links a { min-height: 52px; padding: 5px 8px !important; }
-  #streaming-links .platform-icon { width: 42px; height: 42px; flex-basis: 42px; }
-}
-@media (max-width: 980px) {
-  #streaming-links a { min-height: 50px; padding: 5px 7px !important; }
-  #streaming-links .platform-icon { width: 34px; height: 34px; flex-basis: 34px; }
-  #streaming-links a { white-space: normal; }
-}
-@media (prefers-reduced-motion: reduce) {
-  #streaming-links a { animation: none; transition: none; }
-  #streaming-links .platform-icon { transition: none; }
+  #streaming-links a span:not(.external-arrow) { animation: none !important; transition: none; }
+  #streaming-links .platform-icon { filter: drop-shadow(0 0 2px rgba(241, 59, 104, .18)); }
+  #streaming-links a span:not(.external-arrow) { text-shadow: 0 0 2px rgba(241, 59, 104, .14); }
 }
