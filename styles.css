@@ -101,7 +101,7 @@ h2 span { color: #aaa69d; }
 .text-link { display: inline-flex; align-items: center; gap: 12px; min-height: 26px; border-bottom: 1px solid var(--ink); padding: 3px 0 4px; font-size: 7px; letter-spacing: .12em; }
 .scroll-cue { display: none; }
 .arrow-down { color: var(--pink); font-size: 15px; }
-.listen-art { position: absolute; z-index: 1; top: calc(-49px - 5.9vw); right: clamp(-78px, -4.8vw, -20px); width: 48%; height: clamp(290px, 42vw, 620px); min-height: 0; isolation: isolate; display: flex; align-items: center; justify-content: center; margin: 0; }
+.listen-art { position: absolute; z-index: 1; top: calc(-49px - 5.9vw); right: clamp(-150px, -9.5vw, -20px); width: 48%; height: clamp(290px, 42vw, 620px); min-height: 0; isolation: isolate; display: flex; align-items: center; justify-content: center; margin: 0; }
 .listen-art::before { content: none; }
 .tree-cutout { position: relative; z-index: 1; width: auto; height: 100%; max-width: none; aspect-ratio: 1 / 1; object-fit: contain; object-position: center; mix-blend-mode: multiply; filter: none; }
 .art-label { position: absolute; z-index: 3; top: 3%; right: 6%; left: auto; text-align: center; font-size: 6px; line-height: 1.35; letter-spacing: .12em; }
