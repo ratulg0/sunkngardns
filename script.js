@@ -28,7 +28,7 @@
       if (active) item.setAttribute('aria-current', 'location');
       else item.removeAttribute('aria-current');
     });
-    if (window.matchMedia('(max-width: 700px)').matches) setDrawer(false);
+    if (window.matchMedia('(max-width: 620px)').matches) setDrawer(false);
   }));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && nav.classList.contains('is-open')) setDrawer(false);
@@ -71,7 +71,7 @@
     window.location.href = `mailto:${encodeURIComponent(BOOKING_EMAIL)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
   window.addEventListener('resize', () => {
-    if (!window.matchMedia('(max-width: 700px)').matches) {
+    if (!window.matchMedia('(max-width: 620px)').matches) {
       nav.classList.remove('is-open');
       scrim.classList.remove('is-visible');
       document.body.classList.remove('drawer-open');
