@@ -971,3 +971,18 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
   .listen-art .art-label.label-bottom { right: 35%; bottom: 2%; font-size: 7px; }
   .listen-art .bird-flock { right: 22%; top: 0; width: 92px; }
 }
+
+/* Temporarily hide the brand emblem and wordmark while retaining the tagline. */
+.hero-identity .hero-logo,
+.hero-identity .band-wordmark {
+  display: none !important;
+}
+.hero-identity {
+  min-height: 0;
+}
+.hero-identity .hero-kicker {
+  margin-top: 0;
+}
+.hero-type {
+  transform: none;
+}
