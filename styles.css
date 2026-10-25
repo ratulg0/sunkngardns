@@ -1767,3 +1767,11 @@ h1, h2, h3, h4, h5, h6,
     top: 50% !important;
   }
 }
+
+/* Drop the tree composition below the English wordmark so the canopy no longer collides with it. */
+@media (min-width: 1450px) {
+  .listen-art { top: 140px !important; }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .listen-art { transform: translateY(75px) !important; }
+}
