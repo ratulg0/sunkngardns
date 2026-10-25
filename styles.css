@@ -986,3 +986,60 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
 .hero-type {
   transform: none;
 }
+
+/* Listen-led first screen: clear the former brand area and make the primary action the focus. */
+.hero-identity { display: none !important; }
+@media (min-width: 1450px) {
+  .listen-layout {
+    padding-top: clamp(82px, 9.5vh, 100px) !important;
+  }
+  .streaming-strip {
+    transform: translateY(-78px);
+    position: relative;
+    z-index: 5;
+  }
+  .listen-art .art-label.label-bottom {
+    bottom: -5.5%;
+    right: 31%;
+  }
+  .listen-art .bird-flock {
+    display: block;
+    top: -2.5%;
+    right: 22%;
+    width: clamp(138px, 10.5vw, 176px);
+    height: auto;
+    object-fit: contain;
+  }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .listen-layout { padding-top: clamp(58px, 8.5vh, 80px) !important; }
+  .streaming-strip {
+    transform: translateY(-48px);
+    position: relative;
+    z-index: 5;
+  }
+  .listen-art .art-label.label-bottom { bottom: -4.5%; right: 30%; }
+  .listen-art .bird-flock {
+    display: block;
+    top: -2%;
+    right: 23%;
+    width: clamp(120px, 10vw, 154px);
+    height: auto;
+    object-fit: contain;
+  }
+}
+@media (max-width: 980px) and (min-width: 621px) {
+  .listen-layout { padding-top: clamp(46px, 7vh, 68px) !important; }
+  .streaming-strip {
+    transform: translateY(-24px);
+    position: relative;
+    z-index: 5;
+  }
+  .listen-art .art-label.label-bottom { bottom: -2%; }
+  .listen-art .bird-flock { display: block; width: 110px; height: auto; }
+}
+@media (max-width: 620px) {
+  .listen-layout { padding-top: 42px !important; }
+  .listen-art .art-label.label-bottom { bottom: -1%; }
+  .listen-art .bird-flock { display: block; width: 92px; height: auto; }
+}
