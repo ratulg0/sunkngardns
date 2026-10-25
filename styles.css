@@ -873,3 +873,26 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
   #streaming-links a:nth-of-type(6) { grid-column: 3; grid-row: 2; }
   #streaming-links a:nth-of-type(7) { grid-column: 4; grid-row: 2; border-right: 0; padding-right: 0; }
 }
+
+/* Final center alignment and cleaner two-row platform shelf. */
+@media (min-width: 1450px) {
+  /* Center against the full viewport, including the left navigation rail. */
+  .hero-identity { transform: translateX(-36px); }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .hero-identity { transform: translateX(-34px); }
+}
+@media (min-width: 981px) {
+  #streaming-links a {
+    border-right: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* Lift only the upper row; the lower row keeps its current baseline. */
+  #streaming-links a:nth-of-type(1),
+  #streaming-links a:nth-of-type(2),
+  #streaming-links a:nth-of-type(3),
+  #streaming-links a:nth-of-type(4),
+  #streaming-links a:nth-of-type(8) {
+    transform: translateY(-22px);
+  }
+}
