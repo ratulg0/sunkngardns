@@ -1390,3 +1390,136 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
     letter-spacing: -.065em;
   }
 }
+
+/* Refined top brand balance: three distinct zones around the central watermark. */
+.brand-banner .brand-watermark {
+  width: clamp(138px, 11.4vw, 186px) !important;
+  opacity: .16;
+}
+.brand-banner .brand-hindi {
+  left: calc(25vw + 34px - clamp(150px, 12.5vw, 190px)) !important;
+  right: auto !important;
+  width: clamp(300px, 25vw, 380px) !important;
+  max-height: none !important;
+  height: auto !important;
+  object-fit: contain;
+  object-position: center;
+}
+.brand-banner .brand-english {
+  left: calc(75vw - clamp(150px, 12.5vw, 190px)) !important;
+  right: auto !important;
+  width: clamp(300px, 25vw, 380px) !important;
+  top: 31px !important;
+  font-size: clamp(64px, 5.2vw, 80px) !important;
+  line-height: .92 !important;
+  letter-spacing: -.065em !important;
+  text-align: center;
+  white-space: nowrap;
+  transform: scaleY(1.18);
+  transform-origin: center;
+}
+@media (min-width: 1450px) {
+  .brand-banner .brand-watermark {
+    width: clamp(150px, 11.4vw, 186px) !important;
+    top: -3px;
+  }
+  .brand-banner .brand-hindi {
+    left: calc(25vw + 34px - clamp(150px, 12.5vw, 190px)) !important;
+    top: 18px !important;
+    width: clamp(300px, 25vw, 380px) !important;
+  }
+  .brand-banner .brand-english {
+    left: calc(75vw - clamp(150px, 12.5vw, 190px)) !important;
+    top: 31px !important;
+    width: clamp(300px, 25vw, 380px) !important;
+    font-size: clamp(64px, 5.2vw, 80px) !important;
+  }
+  /* Place the original brushstroke birds below the canopy, just left of the paint base. */
+  .listen-art .bird-flock {
+    left: 23% !important;
+    right: auto !important;
+    top: 58% !important;
+    width: 160px !important;
+    height: auto;
+    transform: none !important;
+    z-index: 5;
+  }
+}
+@media (max-width: 1449px) and (min-width: 981px) {
+  .brand-banner .brand-watermark {
+    width: clamp(126px, 12vw, 162px) !important;
+    top: -2px;
+  }
+  .brand-banner .brand-hindi {
+    left: calc(25vw + 34px - clamp(135px, 12.5vw, 170px)) !important;
+    top: 19px !important;
+    width: clamp(270px, 25vw, 340px) !important;
+  }
+  .brand-banner .brand-english {
+    left: calc(75vw - clamp(135px, 12.5vw, 170px)) !important;
+    top: 32px !important;
+    width: clamp(270px, 25vw, 340px) !important;
+    font-size: clamp(54px, 5.2vw, 68px) !important;
+  }
+  .listen-art .bird-flock {
+    left: 21% !important;
+    right: auto !important;
+    top: 58% !important;
+    width: clamp(135px, 11vw, 155px) !important;
+    height: auto;
+    transform: none !important;
+    z-index: 5;
+  }
+}
+@media (max-width: 980px) and (min-width: 621px) {
+  .brand-banner .brand-watermark { width: 117px !important; }
+  .brand-banner .brand-hindi {
+    left: 3% !important;
+    right: auto !important;
+    top: 21px !important;
+    width: 44vw !important;
+    max-height: 48px !important;
+  }
+  .brand-banner .brand-english {
+    left: 57% !important;
+    right: auto !important;
+    top: 35px !important;
+    width: 41vw !important;
+    font-size: clamp(29px, 4.3vw, 42px) !important;
+    letter-spacing: -.06em !important;
+  }
+  .listen-art .bird-flock {
+    left: 14% !important;
+    right: auto !important;
+    top: 51% !important;
+    width: 110px !important;
+    height: auto;
+  }
+}
+@media (max-width: 620px) {
+  .brand-banner { height: 90px; }
+  .brand-banner .brand-watermark { width: 87px !important; }
+  .brand-banner .brand-hindi {
+    left: 3% !important;
+    right: auto !important;
+    top: 18px !important;
+    width: 43vw !important;
+    max-height: 34px !important;
+  }
+  .brand-banner .brand-english {
+    left: 57% !important;
+    right: auto !important;
+    top: 27px !important;
+    width: 40vw !important;
+    font-size: clamp(22px, 5.1vw, 30px) !important;
+    letter-spacing: -.065em !important;
+    transform: scaleY(1.12);
+  }
+  .listen-art .bird-flock {
+    left: 8% !important;
+    right: auto !important;
+    top: 47% !important;
+    width: 88px !important;
+    height: auto;
+  }
+}
