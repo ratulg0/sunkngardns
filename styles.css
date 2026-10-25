@@ -9,8 +9,8 @@
   --dark: #111110;
   --dark-rule: rgba(242, 238, 229, .27);
   --mono: "Special Elite", "Courier New", monospace;
-  --display: "Teko", "Arial Narrow", sans-serif;
-  --poster: "Teko", "Arial Narrow", sans-serif;
+  --display: "League Gothic", "Arial Narrow", sans-serif;
+  --poster: "League Gothic", "Arial Narrow", sans-serif;
   --nav-width: 68px;
   --motion: cubic-bezier(.2,.7,.2,1);
 }
@@ -545,14 +545,23 @@ p, .intro-copy, .body-copy, .music-aside, .booking-description, .form-note,
   .streaming-links a { flex: 0 0 auto; padding-right: clamp(8px, 1.5vw, 22px); }
 }
 @media (min-width: 1450px) {
-  .listen-layout { padding-top: clamp(24px, 5vh, 48px); }
-  .listen-copy .intro-copy { width: clamp(300px, 31vw, 460px); }
-  .listen-art {
-    right: clamp(-240px, -11vw, -90px);
-    width: clamp(300px, 23vw, 390px);
-    height: clamp(680px, 95vh, 900px);
+  /* Let the artwork use the vertical gap between the wordmark and the platforms. */
+  .listen-layout {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-top: clamp(6px, 1vh, 12px);
+    overflow: visible;
   }
-  .tree-cutout { object-fit: fill; }
+  .listen-copy .intro-copy { width: clamp(390px, 33vw, 500px); }
+  .listen-art {
+    top: auto;
+    bottom: -36px;
+    right: clamp(-200px, -10vw, -90px);
+    width: clamp(640px, 47vw, 760px);
+    height: clamp(760px, 91vh, 840px);
+  }
+  .tree-cutout { width: 100%; height: 100%; object-fit: fill; }
+  .streaming-strip { margin-top: 0; }
 }
 @media (max-width: 1449px) and (min-width: 981px) {
   .listen-layout { padding-top: clamp(18px, 4vh, 40px); }
