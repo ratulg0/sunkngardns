@@ -204,7 +204,7 @@
   left: 4.5% !important;
   right: auto !important;
   top: clamp(460px, 62%, 1320px) !important;
-  width: min(42.5%, 1120px) !important;
+  width: min(42.2%, 1120px) !important;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -266,6 +266,19 @@
   }
 }
 
+@media (min-width: 981px) and (max-width: 1099px) {
+  .listen-section #streaming-links a {
+    gap: 6px;
+    font-size: 11px;
+  }
+
+  .listen-section #streaming-links .platform-icon {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+}
+
 /* Ultrawide: let the masthead, tree and controls grow with the usable canvas. */
 @media (min-width: 1450px) {
   .listen-section .brand-banner {
@@ -280,8 +293,32 @@
     width: clamp(650px, 58%, 1320px) !important;
   }
 
+  .listen-section .listen-copy {
+    max-width: clamp(520px, 27vw, 700px);
+  }
+
+  .listen-section .listen-copy .title-word {
+    font-size: clamp(148px, 7.3vw, 190px);
+  }
+
+  .listen-section .listen-copy .intro-copy {
+    max-width: 520px;
+    font-size: clamp(14px, .65vw, 16px);
+  }
+
   .listen-section .streaming-strip {
-    width: min(42.5%, 1120px) !important;
+    width: min(42.2%, 1120px) !important;
+  }
+
+  .listen-section #streaming-links a {
+    min-height: 74px;
+    font-size: clamp(16px, 1.1vw, 20px);
+  }
+
+  .listen-section #streaming-links .platform-icon {
+    width: clamp(58px, 2.6vw, 72px);
+    height: clamp(58px, 2.6vw, 72px);
+    flex-basis: clamp(58px, 2.6vw, 72px);
   }
 }
 
