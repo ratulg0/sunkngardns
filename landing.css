@@ -21,7 +21,7 @@
   grid-template-rows: minmax(0, auto);
   align-items: center;
   column-gap: clamp(10px, 1.8vw, 30px);
-  width: min(100%, 1400px);
+  width: min(100%, 1160px);
   height: auto !important;
   min-height: clamp(100px, 14vh, 210px);
   margin: 0 auto;
@@ -273,6 +273,10 @@
 /* Ultrawide screens use a broader artwork stage without stretching the content
    across the entire monitor. */
 @media (min-width: 1450px) {
+  .listen-section .brand-banner {
+    width: min(100%, 1400px);
+  }
+
   .listen-section .listen-art {
     width: clamp(500px, 58%, 980px) !important;
   }
@@ -427,13 +431,13 @@
   }
 
   .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr);
     column-gap: 8px;
     min-height: 76px;
   }
 
   .listen-section .brand-banner .brand-watermark {
-    width: 52px !important;
+    width: 70px !important;
     opacity: .29 !important;
   }
 
@@ -551,12 +555,12 @@
   }
 
   .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr);
     column-gap: 6px;
   }
 
   .listen-section .brand-banner .brand-watermark {
-    width: 46px !important;
+    width: 58px !important;
   }
 
   .listen-section .listen-copy {
