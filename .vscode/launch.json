@@ -2,20 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch SUNKNGARDNS in Chrome",
-      "type": "pwa-chrome",
-      "request": "launch",
-      "url": "http://127.0.0.1:5173/",
-      "webRoot": "${workspaceFolder}",
-      "preLaunchTask": "npm: dev"
-    },
-    {
-      "name": "Launch SUNKNGARDNS in Edge",
+      "name": "Attach to Edge (localhost:8080)",
       "type": "pwa-msedge",
-      "request": "launch",
-      "url": "http://127.0.0.1:5173/",
+      "request": "attach",
+      "port": 9222,
       "webRoot": "${workspaceFolder}",
-      "preLaunchTask": "npm: dev"
+      "preLaunchTask": "serve"
     }
   ]
 }

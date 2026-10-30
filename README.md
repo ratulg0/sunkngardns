@@ -2,24 +2,27 @@
 
 A mobile-first, vertically scrollable website with four sections: **Listen**, **About**, **Music**, and **Booking**. The page uses original artwork already in `assets/`; source art is never edited or deleted. The tree illustration is `assets/1000114676.jpeg`, the release covers are kept as supplied, and the logo PNG is also used for the favicon and Apple touch icon.
 
-## Run in VS Code
+## Run in VS Code (F5 debugs on localhost:8080)
 
-Requirements: Node.js `20.19+` or `22.12+` and npm.
+No Node.js, no npm, no Vite, nothing to install. Just open the folder in VS Code and press **F5**. It starts a local HTTP server on `http://localhost:8080/` using Python (built into Windows), launches Edge with remote debugging, and attaches the VS Code debugger. Breakpoints in `script.js` work.
+
+Choose "Attach to Edge (localhost:8080)" from the Run and Debug panel.
+
+**Note:** VS Code launches Edge with a separate profile (`%TEMP%\sunkngardns-debug`), so your existing Edge windows and tabs are completely untouched.
+
+## Run on localhost manually
+
+Python is preinstalled on most devices. From the repo folder:
 
 ```bash
-npm install
-npm run dev
+python -m http.server 8080
 ```
 
-Open the local URL printed in the terminal (normally `http://127.0.0.1:5173/`) and keep the terminal running.
+Then open `http://localhost:8080/` in any browser.
 
-To get the latest GitHub changes:
+## Open without a server
 
-```bash
-git pull --rebase origin main
-```
-
-Commit or stash local edits before pulling if your working tree is not clean.
+You can also just double-click `index.html` to open it directly in any browser. No installation required on any device.
 
 ## Original assets in the repository
 
@@ -30,15 +33,6 @@ Commit or stash local edits before pulling if your working tree is not clean.
 - `art_spotify.jpg` and `djinn_animated.gif` — other supplied originals, preserved untouched
 
 Lazy-loaded images now include explicit width and height attributes to prevent layout shifts.
-
-## Production build
-
-```bash
-npm run build
-npm run preview
-```
-
-Vite writes the production output to `dist/`.
 
 ## Before launch
 
@@ -51,5 +45,5 @@ Vite writes the production output to `dist/`.
 - `index.html` — the four sections, release links and favicon
 - `styles.css` — responsive composition and image layout
 - `script.js` — drawer, active navigation and booking email draft
-- `.vscode/` — browser launch/debug setup
+- `.vscode/` — browser launch/debug setup (localhost:8080 server + Edge debugger)
 - `assets/` — original artwork
