@@ -298,7 +298,7 @@
   }
 
   .listen-section .listen-copy .title-word {
-    font-size: clamp(148px, 7.3vw, 190px);
+    font-size: clamp(110px, 7.3vw, 190px);
   }
 
   .listen-section .listen-copy .intro-copy {
