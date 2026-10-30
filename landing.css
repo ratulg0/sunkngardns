@@ -1,0 +1,585 @@
+/* SUNKNGARDNS — responsive landing-page composition.
+   This stylesheet owns only the Listen section and its mobile top controls. */
+
+.listen-section {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(720px, 100svh, 1250px);
+  padding: clamp(20px, 3vh, 38px) clamp(24px, 5vw, 96px) 44px;
+  overflow: hidden;
+}
+
+/* Three equal visual zones: Hindi wordmark / watermark / English wordmark. */
+.listen-section .brand-banner {
+  position: relative !important;
+  inset: auto !important;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(54px, 6vw, 108px) minmax(0, 1fr);
+  grid-template-rows: minmax(0, auto);
+  align-items: center;
+  column-gap: clamp(10px, 1.8vw, 30px);
+  width: min(100%, 1760px);
+  height: auto !important;
+  min-height: clamp(100px, 14vh, 210px);
+  margin: 0 auto;
+  overflow: visible;
+  pointer-events: none;
+  flex: 0 0 auto;
+}
+
+.listen-section .brand-banner .brand-watermark,
+.listen-section .brand-banner .brand-hindi,
+.listen-section .brand-banner canvas.brand-english {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  align-self: center;
+  height: auto !important;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.listen-section .brand-banner .brand-watermark {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  width: clamp(54px, 6vw, 108px) !important;
+  aspect-ratio: 1809 / 2048;
+  opacity: .29 !important;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.listen-section .brand-banner .brand-hindi {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  left: auto !important;
+  width: min(100%, 560px) !important;
+  max-height: 120px !important;
+  object-position: right center;
+  mix-blend-mode: multiply;
+  background: transparent !important;
+  z-index: 1;
+}
+
+.listen-section .brand-banner canvas.brand-english {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: start;
+  left: auto !important;
+  width: min(100%, 560px) !important;
+  max-height: 150px;
+  display: block;
+  background: transparent !important;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* Copy and original tree art occupy separate sides of the same scene. */
+.listen-section .listen-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: clamp(20px, 3vw, 58px);
+  width: min(100%, 1760px);
+  min-height: clamp(340px, 40vh, 540px);
+  flex: 1 1 auto;
+  margin: 0 auto;
+  padding: clamp(18px, 2.4vh, 34px) 0 0 !important;
+  overflow: visible;
+}
+
+.listen-section .listen-copy {
+  position: relative;
+  z-index: 3;
+  grid-column: 1;
+  width: min(100%, 500px);
+  max-width: 500px;
+  min-height: 0;
+  left: auto !important;
+  padding: clamp(8px, 1.6vh, 24px) 0 0;
+}
+
+.listen-section .listen-copy h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(4px, .8vh, 9px);
+  margin: 0;
+}
+
+.listen-section .listen-copy .title-number {
+  font-size: clamp(19px, 1.8vw, 27px);
+  line-height: 1;
+}
+
+.listen-section .listen-copy .title-word {
+  font-family: var(--display);
+  font-size: clamp(60px, 6.4vw, 116px);
+  font-weight: 500;
+  line-height: .9;
+  letter-spacing: .01em !important;
+  transform: none !important;
+}
+
+.listen-section .listen-copy .title-underline {
+  margin: clamp(9px, 1.2vh, 14px) 0 12px;
+}
+
+.listen-section .listen-copy .intro-copy {
+  display: block !important;
+  width: min(100%, 365px);
+  max-width: 365px;
+  margin: 0;
+  font: 11px/1.7 var(--mono);
+}
+
+/* Keep the supplied transparent tree PNG; change placement, not the artwork. */
+.listen-section .listen-art {
+  position: absolute;
+  z-index: 1;
+  top: clamp(14px, 2vh, 34px) !important;
+  right: clamp(-80px, -3vw, -20px) !important;
+  bottom: auto !important;
+  width: clamp(320px, 50%, 880px) !important;
+  height: auto !important;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+  display: block;
+  overflow: visible;
+  margin: 0;
+  opacity: 1;
+  transform: none !important;
+  pointer-events: none;
+}
+
+.listen-section .listen-art .tree-cutout {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  mix-blend-mode: multiply;
+}
+
+.listen-section .listen-art .yellow-block {
+  position: absolute;
+  z-index: 0;
+  left: 40% !important;
+  right: auto !important;
+  top: 25% !important;
+  width: 14% !important;
+  height: 44% !important;
+  background: transparent url("assets/yellow-brushstroke.png") center / 100% 100% no-repeat !important;
+  background-color: transparent !important;
+  mix-blend-mode: multiply;
+}
+
+.listen-section .listen-art .bird-flock {
+  position: absolute;
+  z-index: 5;
+  display: block !important;
+  left: 8% !important;
+  right: auto !important;
+  top: 52% !important;
+  width: clamp(86px, 10vw, 156px) !important;
+  height: auto;
+  transform: none !important;
+  object-fit: contain;
+}
+
+/* Six platform links are the primary action: vertically centered, three by two. */
+.listen-section .streaming-strip {
+  position: absolute !important;
+  z-index: 7;
+  left: max(24px, calc((100% - 1760px) / 2 + 5vw)) !important;
+  right: auto !important;
+  top: 55% !important;
+  width: min(48%, 820px) !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  transform: translateY(-50%) !important;
+}
+
+.listen-section #streaming-links {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, minmax(52px, auto));
+  align-items: center;
+  justify-content: stretch;
+  gap: clamp(9px, 1.4vh, 18px) clamp(12px, 1.8vw, 26px);
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.listen-section #streaming-links a {
+  display: flex;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(5px, .8vw, 10px);
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  padding: 0 !important;
+  border: 0 !important;
+  font-family: var(--display);
+  font-size: clamp(9px, .82vw, 13px);
+  font-weight: 500;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  transform: none !important;
+}
+
+.listen-section #streaming-links .platform-icon {
+  width: clamp(30px, 3vw, 44px);
+  height: clamp(30px, 3vw, 44px);
+  flex: 0 0 clamp(30px, 3vw, 44px);
+}
+
+.listen-section .streaming-heading {
+  display: none !important;
+}
+
+/* Tablet: retain the numbered rail and keep the tree in the right-hand space. */
+@media (min-width: 621px) and (max-width: 980px) {
+  .listen-section {
+    min-height: clamp(720px, 100svh, 1180px);
+    padding-inline: clamp(22px, 4vw, 36px);
+  }
+
+  .listen-section .brand-banner {
+    grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
+    column-gap: 10px;
+    min-height: clamp(92px, 12vh, 112px);
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: 60px !important;
+  }
+
+  .listen-section .brand-banner .brand-hindi {
+    width: min(100%, 310px) !important;
+    max-height: 82px !important;
+  }
+
+  .listen-section .brand-banner canvas.brand-english {
+    width: min(100%, 320px) !important;
+    max-height: 94px;
+  }
+
+  .listen-section .listen-layout {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: 12px;
+    min-height: clamp(320px, 40vh, 410px);
+  }
+
+  .listen-section .listen-copy {
+    max-width: 300px;
+    padding-top: 12px;
+  }
+
+  .listen-section .listen-copy .title-word {
+    font-size: clamp(58px, 7.3vw, 78px);
+  }
+
+  .listen-section .listen-copy .intro-copy {
+    max-width: 245px;
+    font-size: 10px;
+  }
+
+  .listen-section .listen-art {
+    top: 30px !important;
+    right: -42px !important;
+    width: clamp(320px, 52%, 440px) !important;
+  }
+
+  .listen-section .listen-art .bird-flock {
+    top: 52% !important;
+    left: 8% !important;
+    width: clamp(86px, 12vw, 110px) !important;
+  }
+
+  .listen-section .streaming-strip {
+    left: clamp(24px, 4vw, 40px) !important;
+    top: 56% !important;
+    width: min(60%, 680px) !important;
+  }
+
+  .listen-section #streaming-links {
+    grid-template-rows: repeat(2, minmax(48px, auto));
+    gap: 10px 12px;
+  }
+
+  .listen-section #streaming-links a {
+    min-height: 48px;
+    gap: 5px;
+    font-size: clamp(8px, 1.1vw, 10px);
+  }
+
+  .listen-section #streaming-links .platform-icon {
+    width: clamp(28px, 4vw, 34px);
+    height: clamp(28px, 4vw, 34px);
+    flex-basis: clamp(28px, 4vw, 34px);
+  }
+}
+
+/* Narrow tablets switch to two columns before the labels become cramped. */
+@media (min-width: 621px) and (max-width: 700px) {
+  .listen-section #streaming-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(3, minmax(44px, auto));
+  }
+}
+
+/* Phones: the controls are in normal document flow, never a fixed top bar. */
+@media (max-width: 620px) {
+  html {
+    scroll-padding-top: 0;
+  }
+
+  main {
+    margin-left: 0;
+    padding-top: 0 !important;
+  }
+
+  .mobile-topbar {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 35;
+    display: grid !important;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+    padding: 0 16px;
+    border: 0 !important;
+    background: transparent !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .mobile-topbar .menu-trigger {
+    justify-self: start;
+    width: 40px;
+    height: 44px;
+  }
+
+  .mobile-topbar .mobile-mark {
+    justify-self: center;
+    width: 29px;
+    max-height: 34px;
+    overflow: visible;
+  }
+
+  .mobile-topbar .mobile-mark img {
+    width: 100%;
+    height: 34px;
+    object-fit: contain;
+  }
+
+  .mobile-topbar .topbar-note {
+    display: none !important;
+  }
+
+  .listen-section {
+    min-height: max(680px, calc(100svh - 54px));
+    padding: 14px 18px 28px;
+  }
+
+  .listen-section .brand-banner {
+    grid-template-columns: minmax(0, 1fr) 52px minmax(0, 1fr);
+    column-gap: 8px;
+    min-height: 76px;
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: 52px !important;
+    opacity: .29 !important;
+  }
+
+  .listen-section .brand-banner .brand-hindi {
+    width: 100% !important;
+    max-width: 190px;
+    max-height: 58px !important;
+  }
+
+  .listen-section .brand-banner canvas.brand-english {
+    width: 100% !important;
+    max-width: 190px;
+    max-height: 62px;
+  }
+
+  .listen-section .listen-layout {
+    display: block;
+    width: 100%;
+    min-height: clamp(300px, 40vh, 340px);
+    flex: 0 0 auto;
+    padding: 10px 0 0 !important;
+  }
+
+  .listen-section .listen-copy {
+    width: min(64%, 250px);
+    max-width: 250px;
+    padding-top: 8px;
+  }
+
+  .listen-section .listen-copy h1 {
+    gap: 2px;
+  }
+
+  .listen-section .listen-copy .title-number {
+    font-size: 18px;
+  }
+
+  .listen-section .listen-copy .title-word {
+    font-size: clamp(52px, 13.5vw, 64px);
+    line-height: .9;
+  }
+
+  .listen-section .listen-copy .title-underline {
+    margin: 9px 0 8px;
+  }
+
+  .listen-section .listen-copy .intro-copy {
+    width: 100%;
+    max-width: 245px;
+    margin-top: 7px;
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .listen-section .listen-art {
+    top: 125px !important;
+    right: -12px !important;
+    width: min(55%, 232px) !important;
+    max-width: 232px;
+  }
+
+  .listen-section .listen-art .yellow-block {
+    left: 38% !important;
+    top: 25% !important;
+    width: 14% !important;
+    height: 40% !important;
+  }
+
+  .listen-section .listen-art .bird-flock {
+    top: 55% !important;
+    left: 5% !important;
+    width: 76px !important;
+  }
+
+  .listen-section .streaming-strip {
+    left: 18px !important;
+    right: 18px !important;
+    top: 54% !important;
+    width: auto !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .listen-section #streaming-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: repeat(3, minmax(42px, auto));
+    gap: 8px 14px;
+  }
+
+  .listen-section #streaming-links a {
+    min-height: 42px;
+    gap: 7px;
+    font-size: clamp(8px, 2.25vw, 10px);
+    letter-spacing: .025em;
+  }
+
+  .listen-section #streaming-links .platform-icon {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+  }
+
+  .listen-section #streaming-links .external-arrow {
+    display: none;
+  }
+}
+
+/* Compact phones and short landscape viewports. */
+@media (max-width: 360px) {
+  .mobile-topbar {
+    padding-inline: 11px;
+  }
+
+  .listen-section {
+    padding-inline: 16px;
+  }
+
+  .listen-section .brand-banner {
+    grid-template-columns: minmax(0, 1fr) 46px minmax(0, 1fr);
+    column-gap: 6px;
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: 46px !important;
+  }
+
+  .listen-section .listen-copy {
+    width: 66%;
+  }
+
+  .listen-section .listen-copy .title-word {
+    font-size: 50px;
+  }
+
+  .listen-section .listen-art {
+    right: -10px !important;
+    width: min(54%, 200px) !important;
+  }
+
+  .listen-section #streaming-links {
+    column-gap: 8px;
+  }
+
+  .listen-section #streaming-links a {
+    gap: 5px;
+    font-size: 8px;
+  }
+}
+
+@media (max-height: 700px) and (max-width: 620px) {
+  .listen-section {
+    min-height: 680px;
+  }
+
+  .listen-section .listen-layout {
+    min-height: 286px;
+  }
+
+  .listen-section .listen-art {
+    top: 108px !important;
+    width: min(51%, 210px) !important;
+  }
+
+  .listen-section .streaming-strip {
+    top: 56% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen-section #streaming-links .platform-icon,
+  .listen-section #streaming-links a span:not(.external-arrow) {
+    animation: none !important;
+    transition: none !important;
+  }
+}
