@@ -17,11 +17,11 @@
   inset: auto !important;
   z-index: 5;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(54px, 6vw, 108px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) clamp(112px, 9.1vw, 149px) minmax(0, 1fr);
   grid-template-rows: minmax(0, auto);
   align-items: center;
   column-gap: clamp(10px, 1.8vw, 30px);
-  width: min(100%, 1760px);
+  width: min(100%, 1400px);
   height: auto !important;
   min-height: clamp(100px, 14vh, 210px);
   margin: 0 auto;
@@ -60,8 +60,8 @@
   grid-row: 1;
   justify-self: end;
   left: auto !important;
-  width: min(100%, 560px) !important;
-  max-height: 120px !important;
+  width: 100% !important;
+  max-height: none !important;
   object-position: right center;
   mix-blend-mode: multiply;
   background: transparent !important;
@@ -73,8 +73,8 @@
   grid-row: 1;
   justify-self: start;
   left: auto !important;
-  width: min(100%, 560px) !important;
-  max-height: 150px;
+  width: 100% !important;
+  max-height: none;
   display: block;
   background: transparent !important;
   object-fit: contain;
@@ -148,7 +148,7 @@
   top: clamp(14px, 2vh, 34px) !important;
   right: clamp(-80px, -3vw, -20px) !important;
   bottom: auto !important;
-  width: clamp(320px, 50%, 880px) !important;
+  width: clamp(320px, 58%, 980px) !important;
   height: auto !important;
   min-height: 0;
   aspect-ratio: 4 / 3;
@@ -254,6 +254,30 @@
   display: none !important;
 }
 
+/* Laptop masthead proportions follow the supplied artwork while preserving equal logo gaps. */
+@media (min-width: 981px) and (max-width: 1449px) {
+  .listen-section .brand-banner {
+    grid-template-columns: minmax(0, 1fr) clamp(100px, 9.6vw, 130px) minmax(0, 1fr);
+    column-gap: clamp(16px, 1.8vw, 26px);
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: clamp(100px, 9.6vw, 130px) !important;
+  }
+
+  .listen-section .listen-art {
+    width: clamp(360px, 58%, 820px) !important;
+  }
+}
+
+/* Ultrawide screens use a broader artwork stage without stretching the content
+   across the entire monitor. */
+@media (min-width: 1450px) {
+  .listen-section .listen-art {
+    width: clamp(500px, 58%, 980px) !important;
+  }
+}
+
 /* Tablet: retain the numbered rail and keep the tree in the right-hand space. */
 @media (min-width: 621px) and (max-width: 980px) {
   .listen-section {
@@ -262,13 +286,13 @@
   }
 
   .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
-    column-gap: 10px;
+    grid-template-columns: minmax(0, 1fr) 94px minmax(0, 1fr);
+    column-gap: 8px;
     min-height: clamp(92px, 12vh, 112px);
   }
 
   .listen-section .brand-banner .brand-watermark {
-    width: 60px !important;
+    width: 94px !important;
   }
 
   .listen-section .brand-banner .brand-hindi {
@@ -397,6 +421,7 @@
   }
 
   .listen-section {
+    scroll-margin-top: 0;
     min-height: max(680px, calc(100svh - 54px));
     padding: 14px 18px 28px;
   }
