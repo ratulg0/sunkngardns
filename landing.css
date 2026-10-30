@@ -1,29 +1,29 @@
-/* SUNKNGARDNS — responsive landing-page composition.
-   This stylesheet owns only the Listen section and its mobile top controls. */
+/* SUNKNGARDNS — landing page composition.
+   Responsive rules for the Listen section only. The existing artwork is preserved. */
 
 .listen-section {
   position: relative;
   isolation: isolate;
   display: flex;
   flex-direction: column;
-  min-height: clamp(720px, 100svh, 1250px);
-  padding: clamp(20px, 3vh, 38px) clamp(24px, 5vw, 96px) 44px;
+  min-height: max(100svh, 780px);
+  padding: clamp(18px, 2.5vh, 34px) clamp(22px, 5vw, 96px) clamp(38px, 5vh, 70px);
   overflow: hidden;
 }
 
-/* Three equal visual zones: Hindi wordmark / watermark / English wordmark. */
+/* A true three-column masthead: equal gaps flank the larger centre watermark. */
 .listen-section .brand-banner {
   position: relative !important;
   inset: auto !important;
   z-index: 5;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(112px, 9.1vw, 149px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) clamp(88px, 13vw, 300px) minmax(0, 1fr);
   grid-template-rows: minmax(0, auto);
   align-items: center;
-  column-gap: clamp(10px, 1.8vw, 30px);
-  width: min(100%, 1160px);
+  column-gap: clamp(10px, 2vw, 36px);
+  width: min(100%, 2240px);
+  min-height: clamp(148px, 19vh, 360px);
   height: auto !important;
-  min-height: clamp(100px, 14vh, 210px);
   margin: 0 auto;
   overflow: visible;
   pointer-events: none;
@@ -37,6 +37,7 @@
   top: auto !important;
   right: auto !important;
   bottom: auto !important;
+  left: auto !important;
   transform: none !important;
   align-self: center;
   height: auto !important;
@@ -48,9 +49,9 @@
   grid-column: 2;
   grid-row: 1;
   justify-self: center;
-  width: clamp(54px, 6vw, 108px) !important;
+  width: 100% !important;
   aspect-ratio: 1809 / 2048;
-  opacity: .29 !important;
+  opacity: .31 !important;
   mix-blend-mode: multiply;
   z-index: 0;
 }
@@ -59,8 +60,7 @@
   grid-column: 1;
   grid-row: 1;
   justify-self: end;
-  left: auto !important;
-  width: 100% !important;
+  width: min(100%, 700px) !important;
   max-height: none !important;
   object-position: right center;
   mix-blend-mode: multiply;
@@ -72,27 +72,26 @@
   grid-column: 3;
   grid-row: 1;
   justify-self: start;
-  left: auto !important;
-  width: 100% !important;
-  max-height: none;
   display: block;
+  width: min(100%, 720px) !important;
+  max-height: none;
   background: transparent !important;
   object-fit: contain;
   z-index: 2;
 }
 
-/* Copy and original tree art occupy separate sides of the same scene. */
+/* Clear left copy / right artwork scene, beginning below the whole masthead. */
 .listen-section .listen-layout {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
   align-items: start;
   gap: clamp(20px, 3vw, 58px);
-  width: min(100%, 1760px);
-  min-height: clamp(340px, 40vh, 540px);
-  flex: 1 1 auto;
+  width: min(100%, 2240px);
+  min-height: clamp(340px, 40vh, 560px);
+  flex: 0 0 auto;
   margin: 0 auto;
-  padding: clamp(18px, 2.4vh, 34px) 0 0 !important;
+  padding: clamp(16px, 2vh, 30px) 0 0 !important;
   overflow: visible;
 }
 
@@ -104,7 +103,7 @@
   max-width: 500px;
   min-height: 0;
   left: auto !important;
-  padding: clamp(8px, 1.6vh, 24px) 0 0;
+  padding: clamp(12px, 2.5vh, 32px) 0 0;
 }
 
 .listen-section .listen-copy h1 {
@@ -116,13 +115,13 @@
 }
 
 .listen-section .listen-copy .title-number {
-  font-size: clamp(19px, 1.8vw, 27px);
+  font-size: clamp(21px, 1.9vw, 32px);
   line-height: 1;
 }
 
 .listen-section .listen-copy .title-word {
   font-family: var(--display);
-  font-size: clamp(60px, 6.4vw, 116px);
+  font-size: clamp(74px, 7.3vw, 148px);
   font-weight: 500;
   line-height: .9;
   letter-spacing: .01em !important;
@@ -130,25 +129,26 @@
 }
 
 .listen-section .listen-copy .title-underline {
-  margin: clamp(9px, 1.2vh, 14px) 0 12px;
+  margin: clamp(10px, 1.3vh, 16px) 0 13px;
 }
 
 .listen-section .listen-copy .intro-copy {
   display: block !important;
-  width: min(100%, 365px);
-  max-width: 365px;
+  width: min(100%, 420px);
+  max-width: 420px;
   margin: 0;
-  font: 11px/1.7 var(--mono);
+  font: 13px/1.7 var(--mono);
+  color: #33322e;
 }
 
-/* Keep the supplied transparent tree PNG; change placement, not the artwork. */
+/* The tree keeps its original 4:3 proportions and sits lower than the masthead. */
 .listen-section .listen-art {
   position: absolute;
   z-index: 1;
-  top: clamp(14px, 2vh, 34px) !important;
-  right: clamp(-80px, -3vw, -20px) !important;
+  top: clamp(30px, 4vh, 80px) !important;
+  right: clamp(-110px, -4vw, -36px) !important;
   bottom: auto !important;
-  width: clamp(320px, 58%, 980px) !important;
+  width: clamp(450px, 61%, 1320px) !important;
   height: auto !important;
   min-height: 0;
   aspect-ratio: 4 / 3;
@@ -191,20 +191,20 @@
   left: 8% !important;
   right: auto !important;
   top: 52% !important;
-  width: clamp(86px, 10vw, 156px) !important;
+  width: clamp(90px, 10vw, 170px) !important;
   height: auto;
   transform: none !important;
   object-fit: contain;
 }
 
-/* Six platform links are the primary action: vertically centered, three by two. */
+/* Main highlight: larger six-platform shelf in a balanced 3 × 2 arrangement. */
 .listen-section .streaming-strip {
   position: absolute !important;
   z-index: 7;
-  left: max(24px, calc((100% - 1760px) / 2 + 5vw)) !important;
+  left: 4.5% !important;
   right: auto !important;
-  top: 55% !important;
-  width: min(48%, 820px) !important;
+  top: clamp(460px, 62%, 1320px) !important;
+  width: min(47%, 1120px) !important;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -215,10 +215,10 @@
 .listen-section #streaming-links {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  grid-template-rows: repeat(2, minmax(52px, auto));
+  grid-template-rows: repeat(2, minmax(62px, auto));
   align-items: center;
   justify-content: stretch;
-  gap: clamp(9px, 1.4vh, 18px) clamp(12px, 1.8vw, 26px);
+  gap: clamp(12px, 1.8vh, 22px) clamp(12px, 1.5vw, 24px);
   width: 100%;
   max-width: 100%;
   padding: 0;
@@ -230,150 +230,147 @@
   grid-row: auto !important;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(5px, .8vw, 10px);
+  gap: clamp(7px, .8vw, 12px);
   width: 100%;
   min-width: 0;
-  min-height: 52px;
+  min-height: 62px;
   padding: 0 !important;
   border: 0 !important;
   font-family: var(--display);
-  font-size: clamp(9px, .82vw, 13px);
-  font-weight: 500;
-  letter-spacing: .04em;
+  font-size: clamp(12px, 1vw, 17px);
+  font-weight: 600;
+  letter-spacing: .035em;
   white-space: nowrap;
   transform: none !important;
 }
 
 .listen-section #streaming-links .platform-icon {
-  width: clamp(30px, 3vw, 44px);
-  height: clamp(30px, 3vw, 44px);
-  flex: 0 0 clamp(30px, 3vw, 44px);
+  width: clamp(40px, 2.1vw, 54px);
+  height: clamp(40px, 2.1vw, 54px);
+  flex: 0 0 clamp(40px, 2.1vw, 54px);
 }
 
 .listen-section .streaming-heading {
   display: none !important;
 }
 
-/* Laptop masthead proportions follow the supplied artwork while preserving equal logo gaps. */
+/* Laptop: slightly tighter centre mark and tree scale for the narrower canvas. */
 @media (min-width: 981px) and (max-width: 1449px) {
   .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) clamp(100px, 9.6vw, 130px) minmax(0, 1fr);
-    column-gap: clamp(16px, 1.8vw, 26px);
-  }
-
-  .listen-section .brand-banner .brand-watermark {
-    width: clamp(100px, 9.6vw, 130px) !important;
+    grid-template-columns: minmax(0, 1fr) clamp(145px, 13vw, 190px) minmax(0, 1fr);
+    column-gap: clamp(14px, 2vw, 30px);
   }
 
   .listen-section .listen-art {
-    width: clamp(360px, 58%, 820px) !important;
+    width: clamp(460px, 61%, 900px) !important;
   }
 }
 
-/* Ultrawide screens use a broader artwork stage without stretching the content
-   across the entire monitor. */
+/* Ultrawide: let the masthead, tree and controls grow with the usable canvas. */
 @media (min-width: 1450px) {
   .listen-section .brand-banner {
-    width: min(100%, 1400px);
-  }
-
-  .listen-section .listen-art {
-    width: clamp(500px, 58%, 980px) !important;
-  }
-}
-
-/* Tablet: retain the numbered rail and keep the tree in the right-hand space. */
-@media (min-width: 621px) and (max-width: 980px) {
-  .listen-section {
-    min-height: clamp(720px, 100svh, 1180px);
-    padding-inline: clamp(22px, 4vw, 36px);
-  }
-
-  .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) 94px minmax(0, 1fr);
-    column-gap: 8px;
-    min-height: clamp(92px, 12vh, 112px);
-  }
-
-  .listen-section .brand-banner .brand-watermark {
-    width: 94px !important;
-  }
-
-  .listen-section .brand-banner .brand-hindi {
-    width: min(100%, 310px) !important;
-    max-height: 82px !important;
-  }
-
-  .listen-section .brand-banner canvas.brand-english {
-    width: min(100%, 320px) !important;
-    max-height: 94px;
+    width: min(100%, 2240px);
   }
 
   .listen-section .listen-layout {
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-    gap: 12px;
-    min-height: clamp(320px, 40vh, 410px);
-  }
-
-  .listen-section .listen-copy {
-    max-width: 300px;
-    padding-top: 12px;
-  }
-
-  .listen-section .listen-copy .title-word {
-    font-size: clamp(58px, 7.3vw, 78px);
-  }
-
-  .listen-section .listen-copy .intro-copy {
-    max-width: 245px;
-    font-size: 10px;
+    width: min(100%, 2240px);
   }
 
   .listen-section .listen-art {
-    top: 30px !important;
-    right: -42px !important;
-    width: clamp(320px, 52%, 440px) !important;
+    width: clamp(650px, 61%, 1320px) !important;
+  }
+
+  .listen-section .streaming-strip {
+    width: min(47%, 1120px) !important;
+  }
+}
+
+/* Tablet: a two-column scene, with streaming links after it in normal flow. */
+@media (min-width: 621px) and (max-width: 980px) {
+  .listen-section {
+    min-height: max(100svh, 780px);
+    padding: 18px clamp(22px, 4vw, 36px) 42px;
+  }
+
+  .listen-section .brand-banner {
+    grid-template-columns: minmax(0, 1fr) clamp(104px, 14vw, 136px) minmax(0, 1fr);
+    column-gap: 10px;
+    min-height: clamp(132px, 17vh, 164px);
+  }
+
+  .listen-section .listen-layout {
+    grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+    gap: 12px;
+    min-height: clamp(350px, 42vh, 440px);
+  }
+
+  .listen-section .listen-copy {
+    max-width: 320px;
+    padding-top: 16px;
+  }
+
+  .listen-section .listen-copy .title-number {
+    font-size: 21px;
+  }
+
+  .listen-section .listen-copy .title-word {
+    font-size: clamp(64px, 8vw, 88px);
+  }
+
+  .listen-section .listen-copy .intro-copy {
+    max-width: 280px;
+    font-size: 11.5px;
+  }
+
+  .listen-section .listen-art {
+    top: 34px !important;
+    right: -22px !important;
+    width: min(54%, 440px) !important;
   }
 
   .listen-section .listen-art .bird-flock {
     top: 52% !important;
-    left: 8% !important;
-    width: clamp(86px, 12vw, 110px) !important;
+    left: 7% !important;
+    width: clamp(86px, 11vw, 112px) !important;
   }
 
   .listen-section .streaming-strip {
-    left: clamp(24px, 4vw, 40px) !important;
-    top: 56% !important;
-    width: min(60%, 680px) !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: min(84%, 760px) !important;
+    margin: 12px auto 0 !important;
+    transform: none !important;
   }
 
   .listen-section #streaming-links {
-    grid-template-rows: repeat(2, minmax(48px, auto));
-    gap: 10px 12px;
+    grid-template-rows: repeat(2, minmax(54px, auto));
+    gap: 12px 16px;
   }
 
   .listen-section #streaming-links a {
-    min-height: 48px;
-    gap: 5px;
-    font-size: clamp(8px, 1.1vw, 10px);
+    min-height: 54px;
+    gap: 7px;
+    font-size: clamp(10px, 1.35vw, 12px);
   }
 
   .listen-section #streaming-links .platform-icon {
-    width: clamp(28px, 4vw, 34px);
-    height: clamp(28px, 4vw, 34px);
-    flex-basis: clamp(28px, 4vw, 34px);
+    width: clamp(34px, 4.3vw, 42px);
+    height: clamp(34px, 4.3vw, 42px);
+    flex-basis: clamp(34px, 4.3vw, 42px);
   }
 }
 
-/* Narrow tablets switch to two columns before the labels become cramped. */
+/* Narrow tablets use two columns so all six service labels remain comfortable. */
 @media (min-width: 621px) and (max-width: 700px) {
   .listen-section #streaming-links {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-template-rows: repeat(3, minmax(44px, auto));
+    grid-template-rows: repeat(3, minmax(48px, auto));
   }
 }
 
-/* Phones: the controls are in normal document flow, never a fixed top bar. */
+/* Phone: menu and emblem scroll with the page; tree and links stack without overlap. */
 @media (max-width: 620px) {
   html {
     scroll-padding-top: 0;
@@ -425,46 +422,46 @@
   }
 
   .listen-section {
-    scroll-margin-top: 0;
-    min-height: max(680px, calc(100svh - 54px));
-    padding: 14px 18px 28px;
+    min-height: max(720px, calc(100svh - 54px));
+    padding: 12px 18px 28px;
   }
 
   .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) 70px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) clamp(66px, 18vw, 98px) minmax(0, 1fr);
     column-gap: 8px;
-    min-height: 76px;
+    min-height: 88px;
   }
 
   .listen-section .brand-banner .brand-watermark {
-    width: 70px !important;
-    opacity: .29 !important;
+    width: 100% !important;
+    opacity: .31 !important;
   }
 
   .listen-section .brand-banner .brand-hindi {
     width: 100% !important;
-    max-width: 190px;
-    max-height: 58px !important;
+    max-width: 230px;
   }
 
   .listen-section .brand-banner canvas.brand-english {
     width: 100% !important;
-    max-width: 190px;
-    max-height: 62px;
+    max-width: 230px;
   }
 
   .listen-section .listen-layout {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
     width: 100%;
-    min-height: clamp(300px, 40vh, 340px);
+    min-height: 0;
     flex: 0 0 auto;
     padding: 10px 0 0 !important;
   }
 
   .listen-section .listen-copy {
-    width: min(64%, 250px);
-    max-width: 250px;
-    padding-top: 8px;
+    width: 100%;
+    max-width: 330px;
+    padding: 8px 0 0;
   }
 
   .listen-section .listen-copy h1 {
@@ -472,71 +469,80 @@
   }
 
   .listen-section .listen-copy .title-number {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .listen-section .listen-copy .title-word {
-    font-size: clamp(52px, 13.5vw, 64px);
+    font-size: clamp(56px, 14vw, 72px);
     line-height: .9;
   }
 
   .listen-section .listen-copy .title-underline {
-    margin: 9px 0 8px;
+    margin: 9px 0 9px;
   }
 
   .listen-section .listen-copy .intro-copy {
-    width: 100%;
-    max-width: 245px;
-    margin-top: 7px;
-    font-size: 10px;
-    line-height: 1.55;
+    width: min(100%, 330px);
+    max-width: 330px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
   }
 
   .listen-section .listen-art {
-    top: 125px !important;
-    right: -12px !important;
-    width: min(55%, 232px) !important;
-    max-width: 232px;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(74%, 320px) !important;
+    max-width: 320px;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    margin: 0 0 0 auto;
+    transform: none !important;
   }
 
   .listen-section .listen-art .yellow-block {
-    left: 38% !important;
+    left: 40% !important;
     top: 25% !important;
     width: 14% !important;
-    height: 40% !important;
+    height: 42% !important;
   }
 
   .listen-section .listen-art .bird-flock {
-    top: 55% !important;
-    left: 5% !important;
-    width: 76px !important;
+    top: 52% !important;
+    left: 6% !important;
+    width: clamp(76px, 21vw, 98px) !important;
   }
 
   .listen-section .streaming-strip {
-    left: 18px !important;
-    right: 18px !important;
-    top: 54% !important;
-    width: auto !important;
-    transform: translateY(-50%) !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    margin: 4px auto 0 !important;
+    padding: 0 !important;
+    transform: none !important;
   }
 
   .listen-section #streaming-links {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    grid-template-rows: repeat(3, minmax(42px, auto));
-    gap: 8px 14px;
+    grid-template-rows: repeat(3, minmax(48px, auto));
+    gap: 9px 14px;
   }
 
   .listen-section #streaming-links a {
-    min-height: 42px;
+    min-height: 48px;
     gap: 7px;
-    font-size: clamp(8px, 2.25vw, 10px);
+    font-size: clamp(10px, 2.8vw, 12px);
     letter-spacing: .025em;
   }
 
   .listen-section #streaming-links .platform-icon {
-    width: 29px;
-    height: 29px;
-    flex-basis: 29px;
+    width: clamp(32px, 8vw, 38px);
+    height: clamp(32px, 8vw, 38px);
+    flex-basis: clamp(32px, 8vw, 38px);
   }
 
   .listen-section #streaming-links .external-arrow {
@@ -544,36 +550,27 @@
   }
 }
 
-/* Compact phones and short landscape viewports. */
+/* Compact phones: retain the three distinct masthead zones and readable controls. */
 @media (max-width: 360px) {
   .mobile-topbar {
     padding-inline: 11px;
   }
 
   .listen-section {
-    padding-inline: 16px;
+    padding-inline: 15px;
   }
 
   .listen-section .brand-banner {
-    grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 62px minmax(0, 1fr);
     column-gap: 6px;
   }
 
-  .listen-section .brand-banner .brand-watermark {
-    width: 58px !important;
-  }
-
-  .listen-section .listen-copy {
-    width: 66%;
-  }
-
   .listen-section .listen-copy .title-word {
-    font-size: 50px;
+    font-size: 54px;
   }
 
   .listen-section .listen-art {
-    right: -10px !important;
-    width: min(54%, 200px) !important;
+    width: min(78%, 290px) !important;
   }
 
   .listen-section #streaming-links {
@@ -582,26 +579,13 @@
 
   .listen-section #streaming-links a {
     gap: 5px;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 
 @media (max-height: 700px) and (max-width: 620px) {
   .listen-section {
-    min-height: 680px;
-  }
-
-  .listen-section .listen-layout {
-    min-height: 286px;
-  }
-
-  .listen-section .listen-art {
-    top: 108px !important;
-    width: min(51%, 210px) !important;
-  }
-
-  .listen-section .streaming-strip {
-    top: 56% !important;
+    min-height: 720px;
   }
 }
 
