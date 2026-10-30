@@ -203,7 +203,7 @@
   z-index: 7;
   left: 4.5% !important;
   right: auto !important;
-  top: clamp(460px, 62%, 1320px) !important;
+  top: clamp(540px, 66%, 1320px) !important;
   width: min(42.2%, 1120px) !important;
   max-width: none !important;
   margin: 0 !important;
@@ -338,7 +338,7 @@
   .listen-section .listen-layout {
     grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
     gap: 12px;
-    min-height: clamp(350px, 42vh, 440px);
+    min-height: clamp(370px, 43vh, 460px);
   }
 
   .listen-section .listen-copy {
