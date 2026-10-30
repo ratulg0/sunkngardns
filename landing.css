@@ -148,7 +148,7 @@
   top: clamp(30px, 4vh, 80px) !important;
   right: clamp(-110px, -4vw, -36px) !important;
   bottom: auto !important;
-  width: clamp(450px, 61%, 1320px) !important;
+  width: clamp(450px, 58%, 1320px) !important;
   height: auto !important;
   min-height: 0;
   aspect-ratio: 4 / 3;
@@ -204,7 +204,7 @@
   left: 4.5% !important;
   right: auto !important;
   top: clamp(460px, 62%, 1320px) !important;
-  width: min(47%, 1120px) !important;
+  width: min(42.5%, 1120px) !important;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -245,9 +245,9 @@
 }
 
 .listen-section #streaming-links .platform-icon {
-  width: clamp(40px, 2.1vw, 54px);
-  height: clamp(40px, 2.1vw, 54px);
-  flex: 0 0 clamp(40px, 2.1vw, 54px);
+  width: clamp(44px, 2.1vw, 58px);
+  height: clamp(44px, 2.1vw, 58px);
+  flex: 0 0 clamp(44px, 2.1vw, 58px);
 }
 
 .listen-section .streaming-heading {
@@ -262,7 +262,7 @@
   }
 
   .listen-section .listen-art {
-    width: clamp(460px, 61%, 900px) !important;
+    width: clamp(460px, 58%, 900px) !important;
   }
 }
 
@@ -277,11 +277,11 @@
   }
 
   .listen-section .listen-art {
-    width: clamp(650px, 61%, 1320px) !important;
+    width: clamp(650px, 58%, 1320px) !important;
   }
 
   .listen-section .streaming-strip {
-    width: min(47%, 1120px) !important;
+    width: min(42.5%, 1120px) !important;
   }
 }
 
