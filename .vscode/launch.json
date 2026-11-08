@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Attach to Edge (localhost:8080)",
-      "type": "pwa-msedge",
+      "type": "msedge",
       "request": "attach",
       "port": 9222,
       "webRoot": "${workspaceFolder}",
