@@ -1515,3 +1515,56 @@
     transition: none !important;
   }
 }
+
+/* Heading alignment correction — one type scale and one shared left axis. */
+:root {
+  --section-heading-size: clamp(58px, 6.2vw, 88px);
+  --section-heading-size-mobile: clamp(48px, 13vw, 64px);
+}
+
+.section .section-heading {
+  margin: 0 !important;
+  font-family: var(--display) !important;
+  font-size: var(--section-heading-size) !important;
+  font-weight: 600 !important;
+  line-height: .94 !important;
+  letter-spacing: .005em !important;
+  text-transform: uppercase;
+  font-stretch: normal !important;
+  transform: none !important;
+}
+
+/* About is printed in light ink on the dark-paper section. */
+.about-section .section-heading {
+  color: var(--paper) !important;
+}
+
+/* The first heading in every section begins on the same centered content grid. */
+.listen-section .listen-layout,
+.about-section .about-layout,
+.music-section .music-shell,
+.video-section .videos-shell,
+.booking-section .booking-content {
+  width: min(100%, var(--content-width)) !important;
+  max-width: var(--content-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.listen-section .listen-copy,
+.about-section .about-copy,
+.music-section .music-header,
+.video-section .videos-heading,
+.booking-section .booking-copy {
+  justify-self: start;
+  margin-left: 0 !important;
+  padding-left: 0;
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .section .section-heading {
+    font-size: var(--section-heading-size-mobile) !important;
+    line-height: .94 !important;
+  }
+}
