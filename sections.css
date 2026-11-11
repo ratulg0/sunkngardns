@@ -1672,3 +1672,32 @@
     padding-right: 16px !important;
   }
 }
+
+
+/* Release artwork: show the complete supplied album covers without the previous zoom crop. */
+.release-art {
+  height: auto !important;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.release-art img,
+.release-art--rukhsar img,
+.release-art--sarhadein img {
+  inset: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  transform: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.release-art:hover img,
+.release-art:focus-visible img {
+  transform: none !important;
+}
