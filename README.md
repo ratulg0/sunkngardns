@@ -1,6 +1,6 @@
 # SUNKNGARDNS — one-page band website
 
-A mobile-first, vertically scrollable website with four sections: **Listen**, **About**, **Music**, and **Booking**. The page uses original artwork already in `assets/`; source art is never edited or deleted. The tree illustration is `assets/1000114676.jpeg`, the release covers are kept as supplied, and the logo PNG is also used for the favicon and Apple touch icon.
+A mobile-first, vertically scrollable website with five content-led sections: **Listen**, **About**, **Music**, **Videos**, and **Booking**. The page uses original artwork already in `assets/`; source art is never edited or deleted. The tree illustration is `assets/1000114676.jpeg`, the release covers are kept as supplied, and the logo PNG is also used for the favicon and Apple touch icon.
 
 ## Run in VS Code (F5 debugs on localhost:8080)
 
@@ -36,6 +36,7 @@ Lazy-loaded images now include explicit width and height attributes to prevent l
 
 ## Before launch
 
+- Add the confirmed YouTube video IDs to `data-youtube-id` on the two cards in the Videos section. Until then, the cards link to matching YouTube search results; once IDs are added, clicking a poster loads the embedded player.
 - Replace platform search links with verified artist profiles and release URLs.
 - Add the confirmed booking address to `BOOKING_EMAIL` in `script.js`; the current form opens a prefilled email draft and does not submit to a server.
 - Replace the concept biography with the band's approved final copy when provided.
@@ -45,7 +46,7 @@ Lazy-loaded images now include explicit width and height attributes to prevent l
 - `index.html` — the four sections, release links and favicon
 - `styles.css` — shared site styles, navigation and typography
 - `landing.css` — Listen masthead and landing-page composition
-- `sections.css` — content-led layouts and responsive styling for all four sections
+- `sections.css` — shared heading system, content-led layouts and responsive styling for all five sections
 - `script.js` — drawer, active navigation, wordmark cleanup and booking email draft
 - `.vscode/` — browser launch/debug setup (localhost:8080 server + Edge debugger)
 - `assets/` — original artwork
