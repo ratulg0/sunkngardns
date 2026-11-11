@@ -2135,3 +2135,21 @@
     transform: none;
   }
 }
+
+
+/* Use Apple's supplied Apple Music icon without applying the site's custom glow effects. */
+#streaming-links .apple-icon {
+  object-fit: contain;
+  object-position: center;
+  filter: none !important;
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+#streaming-links a:hover .apple-icon,
+#streaming-links a:focus-visible .apple-icon {
+  filter: none !important;
+  transform: none !important;
+  animation: none !important;
+}
