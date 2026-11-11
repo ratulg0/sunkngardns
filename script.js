@@ -57,7 +57,7 @@
     event.preventDefault();
     if (!bookingForm.reportValidity()) return;
     if (!BOOKING_EMAIL) {
-      formNote.textContent = 'The form is ready. Add the confirmed booking email to BOOKING_EMAIL in script.js before launch.';
+      formNote.textContent = 'Your inquiry has not been sent because the booking email is not connected yet. Add the confirmed address to BOOKING_EMAIL in script.js before launch.';
       formNote.classList.add('form-note-warning');
       return;
     }
