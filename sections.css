@@ -1568,3 +1568,13 @@
     line-height: .94 !important;
   }
 }
+
+
+/* Listen uses the same separate section marker and standalone heading as About and Music. */
+.listen-section > .section-index {
+  display: flex !important;
+}
+
+.listen-section .listen-copy h1.section-heading {
+  display: block !important;
+}
