@@ -43,7 +43,9 @@ Lazy-loaded images now include explicit width and height attributes to prevent l
 ## Main files
 
 - `index.html` — the four sections, release links and favicon
-- `styles.css` — responsive composition and image layout
-- `script.js` — drawer, active navigation and booking email draft
+- `styles.css` — shared site styles, navigation and typography
+- `landing.css` — Listen masthead and landing-page composition
+- `sections.css` — content-led layouts and responsive styling for all four sections
+- `script.js` — drawer, active navigation, wordmark cleanup and booking email draft
 - `.vscode/` — browser launch/debug setup (localhost:8080 server + Edge debugger)
 - `assets/` — original artwork
