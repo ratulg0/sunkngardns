@@ -1618,3 +1618,20 @@
     margin: 4px 0 0 auto;
   }
 }
+
+
+/* Final horizontal-axis alignment: Listen index and Music heading share the same section grid. */
+.listen-section > .section-index {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  align-self: stretch !important;
+}
+
+.music-section .music-layout {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
