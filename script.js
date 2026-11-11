@@ -6,6 +6,7 @@
   const navLinks = [...document.querySelectorAll('.nav-link')];
   const sections = [...document.querySelectorAll('main .section[id]')];
   const bookingForm = document.querySelector('#booking-form');
+  const videoCards = [...document.querySelectorAll('.video-card[data-youtube-id]')];
   const formNote = document.querySelector('#form-note');
   // Add the band's confirmed booking email here before launch.
   const BOOKING_EMAIL = '';
@@ -53,6 +54,31 @@
     }, { rootMargin: '-28% 0px -48% 0px', threshold: [0, .1, .25, .5] });
     sections.forEach((section) => observer.observe(section));
   }
+  // Load YouTube only after a visitor chooses to play. Leave the poster/search link
+  // active until the confirmed video ID is added to the card in index.html.
+  videoCards.forEach((card) => {
+    const videoId = (card.dataset.youtubeId || '').trim();
+    const trigger = card.querySelector('[data-video-play]');
+    const frame = card.querySelector('.video-frame');
+    if (!videoId || !trigger || !frame) return;
+
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      if (card.classList.contains('is-playing')) return;
+
+      const title = card.dataset.videoTitle || 'SUNKNGARDNS video';
+      const player = document.createElement('iframe');
+      player.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+      player.title = `${title} — SUNKNGARDNS on YouTube`;
+      player.loading = 'lazy';
+      player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      player.referrerPolicy = 'strict-origin-when-cross-origin';
+      player.allowFullscreen = true;
+      frame.replaceChildren(player);
+      card.classList.add('is-playing');
+    });
+  });
+
   bookingForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!bookingForm.reportValidity()) return;
