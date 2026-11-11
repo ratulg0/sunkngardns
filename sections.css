@@ -2137,66 +2137,80 @@
 }
 
 
-/* Apple Music asset: crop its grey preview field while keeping the official black icon intact. */
-#streaming-links .apple-icon-frame {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  border-radius: 23%;
-  padding: 0;
-  background: transparent !important;
-  isolation: isolate;
+
+
+/* Shared transparent edge frame; the animated shadow stays on the visible logo glyph. */
+#streaming-links .platform-icon-frame {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  padding: 1px;
+  border: 1px solid rgba(18, 18, 17, .14);
+  border-radius: 22%;
+  background: rgba(242, 238, 229, .16);
 }
 
-#streaming-links .apple-icon-frame .apple-icon-image {
-  position: absolute;
-  top: -30%;
-  left: -30%;
+#streaming-links .platform-icon-frame .platform-icon {
   display: block;
-  width: 160%;
-  height: 160%;
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 100% !important;
+  flex: 0 0 100% !important;
   max-width: none;
-  max-height: none;
-  object-fit: contain;
-  object-position: center;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  box-shadow: none;
-  filter: none;
-  animation: none;
-  transform: none;
-  transition: none;
-  pointer-events: none;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-/* Apple Music is the third service and inherits the same stagger as its peers. */
-#streaming-links a:nth-of-type(3) .apple-icon-frame {
-  animation-delay: -1.4s;
+/* Give the naturally slimmer wordmarks the same visual presence as the round marks. */
+#streaming-links a:nth-of-type(4) .platform-icon {
+  transform: scale(1.14);
+}
+#streaming-links a:nth-of-type(4):hover .platform-icon,
+#streaming-links a:nth-of-type(4):focus-visible .platform-icon {
+  transform: scale(1.22);
+}
+#streaming-links a:nth-of-type(6) .platform-icon {
+  transform: scale(1.27);
+}
+#streaming-links a:nth-of-type(6):hover .platform-icon,
+#streaming-links a:nth-of-type(6):focus-visible .platform-icon {
+  transform: scale(1.35);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  #streaming-links .apple-icon-frame {
-    animation: none !important;
-    filter: none !important;
+@media (max-width: 1449px) and (min-width: 981px) {
+  #streaming-links .platform-icon-frame {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
   }
 }
 
-
-/* Shared translucent icon frames so every streaming mark carries the same soft edge glow. */
-#streaming-links .platform-icon {
-  box-sizing: border-box;
-  padding: 4px;
-  border: 1px solid rgba(18, 18, 17, .13);
-  border-radius: 22%;
-  background: rgba(242, 238, 229, .28);
+@media (max-width: 980px) {
+  #streaming-links .platform-icon-frame {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
 }
 
-/* Keep the cropped Apple Music artwork clean inside the shared frame. */
-#streaming-links .apple-icon-frame .apple-icon-image {
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+@media (max-width: 620px) {
+  #streaming-links .platform-icon-frame {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  #streaming-links .platform-icon-frame {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
 }
