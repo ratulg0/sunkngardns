@@ -2,7 +2,7 @@
    Loaded after styles.css and landing.css; original assets and brand palette remain intact. */
 
 :root {
-  --content-width: 1160px;
+  --content-width: clamp(1160px, 78vw, 1680px);
   --section-y: clamp(64px, 7.5vw, 104px);
   --section-gap: clamp(28px, 4vw, 58px);
 }
@@ -229,7 +229,7 @@
 .about-visual {
   position: relative;
   align-self: stretch;
-  min-height: clamp(300px, 30vw, 390px);
+  min-height: clamp(320px, 27vw, 460px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -409,7 +409,7 @@
   display: block;
   width: 100%;
   max-width: none;
-  height: clamp(260px, 29vw, 380px);
+  height: clamp(300px, 29vw, 440px);
   aspect-ratio: auto;
   overflow: hidden;
   isolation: isolate;
@@ -646,7 +646,7 @@
   align-items: flex-end;
   justify-content: flex-start;
   width: min(100%, 400px);
-  height: clamp(190px, 20vw, 250px);
+  height: clamp(210px, 19vw, 290px);
   margin-top: clamp(20px, 2.8vw, 34px);
   overflow: hidden;
   border-bottom: 1px solid var(--dark-rule);
@@ -861,12 +861,12 @@
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
     gap: 28px;
   }
-  .about-visual { min-height: 280px; }
+  .about-visual { min-height: 300px; }
   .music-layout {
     grid-template-columns: minmax(0, 1fr) minmax(220px, .8fr);
     gap: 28px;
   }
-  .release-art { height: clamp(220px, 30vw, 280px); }
+  .release-art { height: clamp(240px, 30vw, 320px); }
   .booking-content {
     grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
     gap: 26px;
