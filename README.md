@@ -1,6 +1,17 @@
 # SUNKNGARDNS — one-page band website
 
-A mobile-first, vertically scrollable website with five content-led sections: **Listen**, **About**, **Music**, **Videos**, and **Booking**. The page uses original artwork already in `assets/`; source art is never edited or deleted. The tree illustration is `assets/1000114676.jpeg`, the release covers are kept as supplied, and the logo PNG is also used for the favicon and Apple touch icon.
+A mobile-first, vertically scrollable website with five content-led sections: **Listen**, **About**, **Music**, **Videos**, and **Booking**. Original artwork is retained in `assets/`; source files are never overwritten. The tree illustration is `assets/Ink Tree Cluster on Transparent Background.png`, and `assets/1000114676.jpeg` is the LATIFE album cover.
+
+
+## Performance and image optimization
+
+The page uses generated WebP derivatives in `assets/optimized/` for browser delivery. The original artwork remains untouched in `assets/`.
+
+- The Listen wordmark is preprocessed once by the asset pipeline, rather than scanned pixel-by-pixel in the visitor's browser.
+- The LATIFE cover and video posters have responsive `srcset` variants; video posters are pre-cropped to their 16:9 display frame.
+- Key landing visuals are preloaded, while below-the-fold artwork remains lazy-loaded.
+- Netlify caches the generated derivatives for repeat visits.
+- `tools/optimize_assets.py` regenerates the derivatives. The GitHub Actions workflow runs it when source images or relevant markup change.
 
 ## Run in VS Code (F5 debugs on localhost:8080)
 
@@ -47,6 +58,6 @@ Lazy-loaded images now include explicit width and height attributes to prevent l
 - `styles.css` — shared site styles, navigation and typography
 - `landing.css` — Listen masthead and landing-page composition
 - `sections.css` — shared heading system, content-led layouts and responsive styling for all five sections
-- `script.js` — drawer, active navigation, wordmark cleanup and booking email draft
+- `script.js` — drawer, active navigation, lazy YouTube embeds and booking email draft
 - `.vscode/` — browser launch/debug setup (localhost:8080 server + Edge debugger)
 - `assets/` — original artwork
