@@ -6,10 +6,12 @@
   <meta name="theme-color" content="#f2eee5">
   <meta name="description" content="Listen to SUNKNGARDNS, explore the story, releases and music videos, and get in touch for bookings.">
   <title>SUNKNGARDNS — Music for quieter places</title>
-  <link rel="icon" href="assets/logo_sunkngardns.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/logo_sunkngardns.png">
+  <link rel="icon" href="assets/optimized/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/optimized/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/optimized/brand-wordmark.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/optimized/tree-cluster.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="landing.css">
@@ -20,7 +22,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="mobile-topbar" aria-label="Site header">
     <button class="menu-trigger" id="menu-open" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
-    <a href="#listen" class="mobile-mark" aria-label="SUNKNGARDNS home"><img src="assets/logo_sunkngardns.png" alt="SUNKNGARDNS emblem" width="1809" height="2048" decoding="async"></a>
+    <a href="#listen" class="mobile-mark" aria-label="SUNKNGARDNS home"><img src="assets/optimized/band-logo.webp" alt="SUNKNGARDNS emblem" width="512" height="580" decoding="async"></a>
     <span class="topbar-note">INDEPENDENT / MUSIC</span>
   </header>
 
@@ -44,9 +46,9 @@
   <main id="main">
     <section class="section listen-section" id="listen" aria-labelledby="listen-title">
       <div class="brand-banner" aria-label="SUNKNGARDNS in Hindi and English">
-        <img class="brand-watermark" src="assets/logo_sunkngardns.png" alt="" aria-hidden="true" width="1809" height="2048" decoding="async">
+        <img class="brand-watermark" src="assets/optimized/band-logo.webp" alt="" aria-hidden="true" width="512" height="580" decoding="async">
         <img class="brand-hindi" src="assets/Frame_137-1_transparent.png" alt="SUNKNGARDNS in Hindi lettering" width="2048" height="419" decoding="async">
-        <canvas class="brand-english" id="english-wordmark-canvas" role="img" aria-label="sunkngardns" width="800" height="303"></canvas>
+        <img class="brand-english" id="english-wordmark" src="assets/optimized/brand-wordmark.webp" alt="sunkngardns" width="800" height="303" fetchpriority="high" decoding="async">
       </div>
       <div class="section-index"><span>01</span><span>LISTEN</span></div>
       <div class="listen-layout">
@@ -86,8 +88,8 @@
         </div>
         <div class="listen-art" aria-label="Original SUNKNGARDNS tree artwork">
           <span class="yellow-block" aria-hidden="true"></span>
-          <img class="tree-cutout" src="assets/Ink%20Tree%20Cluster%20on%20Transparent%20Background.png" alt="Ink illustration of a cluster of trees" width="1448" height="1086" fetchpriority="high" decoding="async">
-          <img class="bird-flock" src="assets/Hot%20Pink%20Brushstroke%20Bird%20Flock.png" alt="Three hot pink brushstroke birds" width="1581" height="717" decoding="async">
+          <img class="tree-cutout" src="assets/optimized/tree-cluster.webp" alt="Ink illustration of a cluster of trees" width="1448" height="1086" fetchpriority="high" decoding="async">
+          <img class="bird-flock" src="assets/optimized/bird-flock.webp" alt="Three hot pink brushstroke birds" width="1581" height="717" decoding="async">
         </div>
       </div>
     </section>
@@ -104,7 +106,7 @@
         </div>
         <a class="about-visual" href="#music" aria-label="Explore SUNKNGARDNS music releases">
           <span class="visual-counter">A / 02</span>
-          <img src="assets/art_spotify.jpg" alt="Original hand-drawn ink illustration of trees" width="2048" height="2048" loading="lazy" decoding="async">
+          <img src="assets/optimized/about-art.webp" alt="Original hand-drawn ink illustration of trees" width="1000" height="1000" loading="lazy" decoding="async">
           <span class="about-pink-slip" aria-hidden="true"></span>
           <div class="visual-caption"><span>FIGURE A</span><span>GROWING OTHERWISE</span></div>
           <span class="visual-hover-cue">EXPLORE RELEASES <span aria-hidden="true">↗</span></span>
@@ -130,7 +132,7 @@
 
         <div class="album-feature" aria-label="LATIFE continuing album">
           <a class="album-cover" href="https://open.spotify.com/search/sunkngardns%20latife" target="_blank" rel="noopener noreferrer" aria-label="Find LATIFE by SUNKNGARDNS on streaming platforms">
-            <img src="assets/1000114676.jpeg" alt="LATIFE album cover artwork" loading="lazy" decoding="async">
+            <img src="assets/optimized/latife-cover-960.webp" srcset="assets/optimized/latife-cover-640.webp 640w, assets/optimized/latife-cover-960.webp 960w" sizes="(max-width: 700px) 100vw, 48vw" alt="LATIFE album cover artwork" width="960" height="960" loading="lazy" decoding="async">
             <span class="album-cover-caption">THE CONTINUING ALBUM <b>↗</b></span>
           </a>
 
@@ -180,7 +182,7 @@
           <article class="video-card" data-youtube-id="KrmMaL6c518" data-video-title="Rukhsar">
             <div class="video-frame">
               <a class="video-frame-link" data-video-play href="https://www.youtube.com/results?search_query=SUNKNGARDNS+Rukhsar" target="_blank" rel="noopener noreferrer" aria-label="Find the SUNKNGARDNS Rukhsar video on YouTube">
-                <img src="assets/coverart_rukhsar.png" alt="Rukhsar release artwork" width="2048" height="2048" loading="lazy" decoding="async">
+                <img src="assets/optimized/video-rukhsar-960.webp" srcset="assets/optimized/video-rukhsar-640.webp 640w, assets/optimized/video-rukhsar-960.webp 960w" sizes="(max-width: 700px) 100vw, 50vw" alt="Rukhsar release artwork" width="960" height="540" loading="lazy" decoding="async">
                 <span class="video-frame-index">01 / SONG VISUAL</span>
                 <span class="video-play-control" aria-hidden="true"><span></span></span>
                 <span class="video-frame-caption">FIND ON YOUTUBE <b>↗</b></span>
@@ -199,7 +201,7 @@
           <article class="video-card" data-youtube-id="Wg-jEEqPLhg" data-video-title="Sarhadein">
             <div class="video-frame">
               <a class="video-frame-link" data-video-play href="https://www.youtube.com/results?search_query=SUNKNGARDNS+Sarhadein" target="_blank" rel="noopener noreferrer" aria-label="Find the SUNKNGARDNS Sarhadein video on YouTube">
-                <img src="assets/coverart_sarhadein.jpg" alt="Sarhadein release artwork" width="2048" height="2048" loading="lazy" decoding="async">
+                <img src="assets/optimized/video-sarhadein-960.webp" srcset="assets/optimized/video-sarhadein-640.webp 640w, assets/optimized/video-sarhadein-960.webp 960w" sizes="(max-width: 700px) 100vw, 50vw" alt="Sarhadein release artwork" width="960" height="540" loading="lazy" decoding="async">
                 <span class="video-frame-index">02 / SONG VISUAL</span>
                 <span class="video-play-control" aria-hidden="true"><span></span></span>
                 <span class="video-frame-caption">PLAY ON YOUTUBE <b>↗</b></span>
@@ -230,7 +232,7 @@
           <span class="title-underline" aria-hidden="true"></span>
           <p class="booking-description">Interested in having SUNKNGARDNS play at your event? Tell us about the room, the date and what you have in mind.</p>
           <div class="booking-art-wrap" aria-hidden="true">
-            <img src="assets/donkey_transparent.png" alt="" width="1625" height="1625" loading="lazy" decoding="async">
+            <img src="assets/optimized/donkey-640.webp" srcset="assets/optimized/donkey-320.webp 320w, assets/optimized/donkey-640.webp 640w" sizes="(max-width: 700px) 90vw, 32vw" alt="" width="640" height="640" loading="lazy" decoding="async">
             <span>ON THE ROAD / SOON</span>
           </div>
         </div>
@@ -268,7 +270,7 @@
         </form>
       </div>
       <footer class="site-footer">
-        <a class="footer-brand" href="#listen" aria-label="Back to SUNKNGARDNS home"><img src="assets/logo_sunkngardns.png" alt="" width="1809" height="2048" loading="lazy" decoding="async"></a>
+        <a class="footer-brand" href="#listen" aria-label="Back to SUNKNGARDNS home"><img src="assets/optimized/band-logo.webp" alt="" width="512" height="580" loading="lazy" decoding="async"></a>
         <span>THANKS FOR BEING HERE.</span>
         <a href="#listen" class="back-top">BACK TO THE TOP ↑</a>
         <span class="footer-year">© SUNKNGARDNS</span>

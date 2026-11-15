@@ -32,7 +32,7 @@
 
 .listen-section .brand-banner .brand-watermark,
 .listen-section .brand-banner .brand-hindi,
-.listen-section .brand-banner canvas.brand-english {
+.listen-section .brand-banner img.brand-english {
   position: relative !important;
   top: auto !important;
   right: auto !important;
@@ -68,7 +68,7 @@
   z-index: 1;
 }
 
-.listen-section .brand-banner canvas.brand-english {
+.listen-section .brand-banner img.brand-english {
   grid-column: 3;
   grid-row: 1;
   justify-self: start;
@@ -483,7 +483,7 @@
     max-width: 230px;
   }
 
-  .listen-section .brand-banner canvas.brand-english {
+  .listen-section .brand-banner img.brand-english {
     width: 100% !important;
     max-width: 230px;
   }

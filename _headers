@@ -1,0 +1,3 @@
+# Optimized derivative images are stable, cacheable static assets.
+/assets/optimized/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
