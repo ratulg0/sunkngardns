@@ -3,6 +3,7 @@ name: Optimize static image assets
 on:
   push:
     branches:
+      - main
       - perf-optimization
     paths:
       - 'index.html'
