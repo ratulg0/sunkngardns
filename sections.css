@@ -3306,3 +3306,86 @@ main > .section::after {
     width: min(98vw, 350px) !important;
   }
 }
+
+
+/* Landing masthead balance: restore room for the Listen heading and all platform links. */
+.listen-section .brand-banner {
+  height: clamp(220px, 26vh, 290px) !important;
+  min-height: 0 !important;
+}
+
+.listen-section .brand-banner .brand-watermark {
+  width: clamp(210px, 21vw, 320px) !important;
+  opacity: .55 !important;
+}
+
+.listen-section .brand-banner img.brand-english {
+  width: clamp(560px, 66vw, 1060px) !important;
+  max-width: calc(100% - 24px) !important;
+  transform: translate(-50%, -50%) scaleX(1.06) scaleY(.84) !important;
+}
+
+/* Reduce the footer Hindi signature to a confident but secondary scale. */
+.footer-hindi-mark {
+  width: min(100%, 980px) !important;
+}
+
+.footer-hindi-mark img {
+  width: min(92%, 880px) !important;
+}
+
+/* Tablet: keep the wordmark broad without pushing Listen below the fold. */
+@media (max-width: 980px) and (min-width: 621px) {
+  .listen-section .brand-banner {
+    height: clamp(190px, 25vh, 250px) !important;
+    min-height: 0 !important;
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: clamp(155px, 21vw, 220px) !important;
+    opacity: .53 !important;
+  }
+
+  .listen-section .brand-banner img.brand-english {
+    width: min(86vw, 850px) !important;
+    max-width: calc(100% - 16px) !important;
+    transform: translate(-50%, -50%) scaleX(1.06) scaleY(.86) !important;
+  }
+
+  .footer-hindi-mark img {
+    width: min(92%, 760px) !important;
+  }
+}
+
+/* Mobile: compact masthead so the streaming destinations remain visible on the first screen. */
+@media (max-width: 620px) {
+  .listen-section .brand-banner {
+    height: clamp(126px, 34vw, 158px) !important;
+    min-height: 0 !important;
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: clamp(94px, 27vw, 132px) !important;
+    opacity: .5 !important;
+  }
+
+  .listen-section .brand-banner img.brand-english {
+    width: min(92vw, 420px) !important;
+    max-width: calc(100% - 8px) !important;
+    transform: translate(-50%, -50%) scaleX(1.045) scaleY(.88) !important;
+  }
+
+  .footer-hindi-mark {
+    width: 100% !important;
+  }
+
+  .footer-hindi-mark img {
+    width: min(94%, 440px) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .listen-section .brand-banner img.brand-english {
+    width: min(90vw, 330px) !important;
+  }
+}
