@@ -3385,3 +3385,125 @@ main > .section::after {
     width: min(90vw, 330px) !important;
   }
 }
+
+
+/* Listen artwork motion system: flying flock, responsive tree and living brush mark. */
+.listen-section .listen-art .tree-cutout {
+  transform-origin: 52% 94%;
+  translate: var(--tree-shift-x, 0px) var(--tree-shift-y, 0px);
+  transition: translate .65s cubic-bezier(.2,.7,.2,1);
+  will-change: transform, translate;
+}
+
+.listen-section .listen-art .bird-flock {
+  transform-origin: 50% 50%;
+  translate: var(--bird-shift-x, 0px) var(--bird-shift-y, 0px);
+  transition: translate .45s cubic-bezier(.2,.7,.2,1);
+  will-change: transform, translate;
+}
+
+.listen-section .listen-art .yellow-block {
+  transform-origin: 52% 50%;
+  translate: var(--paint-shift-x, 0px) var(--paint-shift-y, 0px);
+  rotate: var(--paint-tilt, 0deg);
+  transition:
+    translate .55s cubic-bezier(.2,.7,.2,1),
+    rotate .55s cubic-bezier(.2,.7,.2,1),
+    filter .7s ease,
+    scale .7s ease;
+  will-change: translate, rotate, filter;
+}
+
+.listen-section.is-in-view .listen-art .bird-flock {
+  animation: flock-flight 9.2s cubic-bezier(.42,0,.35,1) infinite;
+}
+
+.listen-section.is-in-view .listen-art .tree-cutout {
+  animation: tree-canopy-sway 15s ease-in-out infinite;
+}
+
+.listen-section.is-in-view .listen-art .yellow-block {
+  animation: yellow-pigment-breathe 8s ease-in-out infinite;
+}
+
+@keyframes flock-flight {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  18% {
+    transform: translate3d(10px, -9px, 0) rotate(-3deg) scale(1.015);
+  }
+  42% {
+    transform: translate3d(31px, -20px, 0) rotate(-1deg) scale(1.035);
+  }
+  67% {
+    transform: translate3d(49px, -7px, 0) rotate(2.5deg) scale(1.015);
+  }
+  86% {
+    transform: translate3d(22px, 5px, 0) rotate(1deg) scale(1);
+  }
+}
+
+@keyframes tree-canopy-sway {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  28% { transform: rotate(.32deg) translateY(-2px); }
+  62% { transform: rotate(-.38deg) translateY(1px); }
+}
+
+@keyframes yellow-pigment-breathe {
+  0%, 100% { filter: saturate(1) brightness(1); scale: 1 1; }
+  46% { filter: saturate(1.12) brightness(1.035); scale: 1.025 1.035; }
+  72% { filter: saturate(1.04) brightness(1.01); scale: 1.01 1.015; }
+}
+
+/* A fingertip tap briefly wakes the illustration without requiring hover. */
+.listen-section .listen-art.art-awake .bird-flock {
+  animation-duration: 3.8s !important;
+  filter: saturate(1.2);
+}
+
+.listen-section .listen-art.art-awake .tree-cutout {
+  transform: rotate(.42deg) translateY(-3px);
+}
+
+.listen-section .listen-art.art-awake .yellow-block {
+  filter: saturate(1.28) brightness(1.1);
+  scale: 1.08 1.1;
+  rotate: -1.8deg;
+}
+
+.listen-section .listen-art.art-awake .yellow-block {
+  transition-duration: .22s;
+}
+
+/* Make motion a little more spacious on narrow displays, without losing the composition. */
+@media (max-width: 620px) {
+  .listen-section.is-in-view .listen-art .bird-flock {
+    animation-duration: 10.8s;
+  }
+
+  .listen-section.is-in-view .listen-art .tree-cutout {
+    animation-duration: 18s;
+  }
+
+  .listen-section.is-in-view .listen-art .yellow-block {
+    animation-duration: 9.5s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen-section.is-in-view .listen-art .bird-flock,
+  .listen-section.is-in-view .listen-art .tree-cutout,
+  .listen-section.is-in-view .listen-art .yellow-block,
+  .listen-section .listen-art.art-awake .bird-flock,
+  .listen-section .listen-art.art-awake .tree-cutout,
+  .listen-section .listen-art.art-awake .yellow-block {
+    animation: none !important;
+    transition: none !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}

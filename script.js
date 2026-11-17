@@ -57,6 +57,61 @@
     }, { rootMargin: '-28% 0px -48% 0px', threshold: [0, .1, .25, .5] });
     sections.forEach((section) => observer.observe(section));
   }
+
+  // Interactive Listen artwork: pointer parallax on desktop, a short response to touch.
+  const listenSection = document.querySelector('.listen-section');
+  const listenArt = listenSection?.querySelector('.listen-art');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (listenSection && listenArt && !reducedMotion) {
+    let artFrame = 0;
+    let touchResetTimer = 0;
+
+    const resetArtworkPointer = () => {
+      if (artFrame) cancelAnimationFrame(artFrame);
+      artFrame = requestAnimationFrame(() => {
+        listenArt.style.setProperty('--tree-shift-x', '0px');
+        listenArt.style.setProperty('--tree-shift-y', '0px');
+        listenArt.style.setProperty('--bird-shift-x', '0px');
+        listenArt.style.setProperty('--bird-shift-y', '0px');
+        listenArt.style.setProperty('--paint-shift-x', '0px');
+        listenArt.style.setProperty('--paint-shift-y', '0px');
+        listenArt.style.setProperty('--paint-tilt', '0deg');
+      });
+    };
+
+    listenSection.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch') return;
+      const bounds = listenArt.getBoundingClientRect();
+      if (!bounds.width || !bounds.height) return;
+
+      const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - .5) * 2));
+      const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - .5) * 2));
+
+      if (artFrame) cancelAnimationFrame(artFrame);
+      artFrame = requestAnimationFrame(() => {
+        listenArt.style.setProperty('--tree-shift-x', `${(-x * 5.5).toFixed(1)}px`);
+        listenArt.style.setProperty('--tree-shift-y', `${(-y * 3.5).toFixed(1)}px`);
+        listenArt.style.setProperty('--bird-shift-x', `${(x * 9).toFixed(1)}px`);
+        listenArt.style.setProperty('--bird-shift-y', `${(y * 6).toFixed(1)}px`);
+        listenArt.style.setProperty('--paint-shift-x', `${(-x * 7).toFixed(1)}px`);
+        listenArt.style.setProperty('--paint-shift-y', `${(-y * 4).toFixed(1)}px`);
+        listenArt.style.setProperty('--paint-tilt', `${(x * 2.2).toFixed(2)}deg`);
+      });
+    }, { passive: true });
+
+    listenSection.addEventListener('pointerleave', resetArtworkPointer, { passive: true });
+
+    listenSection.addEventListener('pointerdown', (event) => {
+      if (event.pointerType !== 'touch') return;
+      listenArt.classList.remove('art-awake');
+      void listenArt.offsetWidth;
+      listenArt.classList.add('art-awake');
+      window.clearTimeout(touchResetTimer);
+      touchResetTimer = window.setTimeout(() => listenArt.classList.remove('art-awake'), 1250);
+    }, { passive: true });
+  }
+
   // Load YouTube only after a visitor chooses to play. Leave the poster/search link
   // active until the confirmed video ID is added to the card in index.html.
   videoCards.forEach((card) => {
