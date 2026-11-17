@@ -2827,10 +2827,6 @@ main > .section::after {
   z-index: 1 !important;
 }
 
-.mobile-topbar .mobile-mark {
-  display: none !important;
-}
-
 .footer-hindi-mark {
   display: flex;
   align-items: center;
