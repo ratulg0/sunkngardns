@@ -49,4 +49,4 @@ jobs:
             exit 0
           fi
           git commit -m "Generate optimized WebP assets"
-          git push origin perf-optimization
+          git push origin "HEAD:${GITHUB_REF_NAME}"

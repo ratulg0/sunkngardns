@@ -119,6 +119,7 @@ def main() -> None:
     make_wordmark()
 
     save_variant("logo_sunkngardns.png", "band-logo.webp", 512, 90)
+    save_variant("Frame_137-1_transparent.png", "hindi-wordmark.webp", 1200, 90)
     save_variant("Ink Tree Cluster on Transparent Background.png", "tree-cluster.webp", 1448, 89)
     save_variant("Hot Pink Brushstroke Bird Flock.png", "bird-flock.webp", 900, 89)
     save_variant("art_spotify.jpg", "about-art.webp", 1000, 82)
