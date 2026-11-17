@@ -2669,3 +2669,112 @@ main > .section {
     opacity: 1;
   }
 }
+
+
+/* Refine section seam: keep the colour blend soft, but make it visually much thinner. */
+main > .section::after {
+  height: 8px;
+}
+
+@media (max-width: 620px) {
+  main > .section::after {
+    height: 6px;
+  }
+}
+
+/* One-time first impression: stagger the listening buttons into view on first entry. */
+.listen-section.is-in-view #streaming-links a {
+  animation: platform-first-arrive .78s cubic-bezier(.2,.7,.2,1) both !important;
+}
+
+.listen-section.is-in-view #streaming-links a:nth-child(1) { animation-delay: .08s !important; }
+.listen-section.is-in-view #streaming-links a:nth-child(2) { animation-delay: .18s !important; }
+.listen-section.is-in-view #streaming-links a:nth-child(3) { animation-delay: .28s !important; }
+.listen-section.is-in-view #streaming-links a:nth-child(4) { animation-delay: .38s !important; }
+.listen-section.is-in-view #streaming-links a:nth-child(5) { animation-delay: .48s !important; }
+.listen-section.is-in-view #streaming-links a:nth-child(6) { animation-delay: .58s !important; }
+
+@keyframes platform-first-arrive {
+  0% {
+    opacity: 0;
+    translate: 0 22px;
+    transform: scale(.96);
+    clip-path: inset(0 0 100% 0);
+  }
+  68% {
+    opacity: 1;
+    translate: 0 -2px;
+    transform: scale(1.015);
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    transform: scale(1);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Each icon makes a small, clean entrance inside its frame. */
+.listen-section.is-in-view #streaming-links .platform-icon-frame {
+  animation: platform-icon-first-pop .66s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.listen-section.is-in-view #streaming-links a:nth-child(1) .platform-icon-frame { animation-delay: .12s; }
+.listen-section.is-in-view #streaming-links a:nth-child(2) .platform-icon-frame { animation-delay: .22s; }
+.listen-section.is-in-view #streaming-links a:nth-child(3) .platform-icon-frame { animation-delay: .32s; }
+.listen-section.is-in-view #streaming-links a:nth-child(4) .platform-icon-frame { animation-delay: .42s; }
+.listen-section.is-in-view #streaming-links a:nth-child(5) .platform-icon-frame { animation-delay: .52s; }
+.listen-section.is-in-view #streaming-links a:nth-child(6) .platform-icon-frame { animation-delay: .62s; }
+
+@keyframes platform-icon-first-pop {
+  0% { opacity: 0; transform: scale(.72) rotate(-7deg); }
+  72% { opacity: 1; transform: scale(1.07) rotate(1.5deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+
+/* A single immediate pink draw, followed by the slower periodic edge cue. */
+#streaming-links a::after {
+  animation:
+    platform-first-sweep .92s cubic-bezier(.2,.7,.2,1) var(--first-sweep-delay, .12s) both,
+    listening-button-attention 5.6s cubic-bezier(.4,0,.2,1) calc(var(--first-sweep-delay, .12s) + 6.1s) infinite;
+}
+
+#streaming-links a:nth-child(1) { --first-sweep-delay: .12s; }
+#streaming-links a:nth-child(2) { --first-sweep-delay: .24s; }
+#streaming-links a:nth-child(3) { --first-sweep-delay: .36s; }
+#streaming-links a:nth-child(4) { --first-sweep-delay: .48s; }
+#streaming-links a:nth-child(5) { --first-sweep-delay: .60s; }
+#streaming-links a:nth-child(6) { --first-sweep-delay: .72s; }
+
+@keyframes platform-first-sweep {
+  0% { opacity: 0; transform: scaleX(0); transform-origin: left center; }
+  24% { opacity: 1; transform: scaleX(.18); transform-origin: left center; }
+  78% { opacity: .95; transform: scaleX(1); transform-origin: left center; }
+  100% { opacity: .65; transform: scaleX(0); transform-origin: right center; }
+}
+
+#streaming-links a:hover::after,
+#streaming-links a:focus-visible::after {
+  animation: none !important;
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen-section.is-in-view #streaming-links a,
+  .listen-section.is-in-view #streaming-links .platform-icon-frame {
+    animation: none !important;
+    opacity: 1;
+    clip-path: none;
+    transform: none;
+    translate: none;
+  }
+
+  #streaming-links a::after {
+    animation: none !important;
+    opacity: .35;
+    transform: scaleX(.18);
+  }
+}
