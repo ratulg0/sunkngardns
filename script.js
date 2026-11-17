@@ -42,6 +42,9 @@
   });
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('is-in-view');
+      });
       const visible = entries.filter((entry) => entry.isIntersecting)
         .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;

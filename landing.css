@@ -193,7 +193,7 @@
   top: 52% !important;
   width: clamp(90px, 10vw, 170px) !important;
   height: auto;
-  transform: none !important;
+  transform-origin: 50% 50%;
   object-fit: contain;
 }
 
