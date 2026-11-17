@@ -3172,3 +3172,20 @@ main > .section::after {
     translate: none !important;
   }
 }
+
+
+/* Enable pointer tracking on the masthead so the layered mark can respond to the cursor. */
+.listen-section .brand-banner {
+  pointer-events: auto !important;
+}
+
+.listen-section .brand-banner .brand-watermark,
+.listen-section .brand-banner img.brand-english {
+  pointer-events: auto;
+  will-change: translate, scale, opacity;
+}
+
+.listen-section .brand-banner:hover .brand-watermark {
+  opacity: .54 !important;
+  scale: 1.035;
+}
