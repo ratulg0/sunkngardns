@@ -2586,3 +2586,86 @@ main > .section {
     translate: none !important;
   }
 }
+
+
+/* Listening buttons: an occasional pink edge-sweep gives the destinations a clear cue. */
+#streaming-links a::after {
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: listening-button-attention 5.6s cubic-bezier(.4,0,.2,1) infinite;
+}
+
+#streaming-links a:nth-child(1)::after { animation-delay: .2s; }
+#streaming-links a:nth-child(2)::after { animation-delay: .75s; }
+#streaming-links a:nth-child(3)::after { animation-delay: 1.3s; }
+#streaming-links a:nth-child(4)::after { animation-delay: 1.85s; }
+#streaming-links a:nth-child(5)::after { animation-delay: 2.4s; }
+#streaming-links a:nth-child(6)::after { animation-delay: 2.95s; }
+
+@keyframes listening-button-attention {
+  0%, 61% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  70% {
+    opacity: .9;
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  82% {
+    opacity: .55;
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+  83%, 100% {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: right center;
+  }
+}
+
+#streaming-links a:hover::after,
+#streaming-links a:focus-visible::after {
+  animation: none !important;
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+@media (max-width: 620px) {
+  #streaming-links a::after {
+    height: 2px;
+    animation-duration: 6.4s;
+  }
+}
+
+/* Second grain reduction: fewer, fainter freckles and a much larger repeat tile. */
+body,
+.side-nav,
+main > .section {
+  background-size: 720px 720px !important;
+}
+
+@media (max-width: 620px) {
+  body,
+  .side-nav,
+  main > .section {
+    background-size: 820px 820px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #streaming-links a::after {
+    animation: none !important;
+    transform: scaleX(.18);
+    opacity: .35;
+  }
+
+  #streaming-links a:hover::after,
+  #streaming-links a:focus-visible::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
