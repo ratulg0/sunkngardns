@@ -84,6 +84,12 @@
       if (event.pointerType === 'touch') return;
       const bounds = listenArt.getBoundingClientRect();
       if (!bounds.width || !bounds.height) return;
+      const insideArtwork = event.clientX >= bounds.left && event.clientX <= bounds.right
+        && event.clientY >= bounds.top && event.clientY <= bounds.bottom;
+      if (!insideArtwork) {
+        resetArtworkPointer();
+        return;
+      }
 
       const x = Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width - .5) * 2));
       const y = Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height - .5) * 2));
@@ -104,6 +110,10 @@
 
     listenSection.addEventListener('pointerdown', (event) => {
       if (event.pointerType !== 'touch') return;
+      const bounds = listenArt.getBoundingClientRect();
+      const insideArtwork = event.clientX >= bounds.left && event.clientX <= bounds.right
+        && event.clientY >= bounds.top && event.clientY <= bounds.bottom;
+      if (!insideArtwork) return;
       listenArt.classList.remove('art-awake');
       void listenArt.offsetWidth;
       listenArt.classList.add('art-awake');
