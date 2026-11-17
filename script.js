@@ -11,43 +11,6 @@
   // Add the band's confirmed booking email here before launch.
   const BOOKING_EMAIL = '';
 
-  const brandBanner = document.querySelector('#brand-banner');
-  const brandLayoutButtons = [...document.querySelectorAll('[data-brand-layout]')];
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function setBrandLayout(layout) {
-    if (!brandBanner || !['stacked', 'compact', 'horizontal'].includes(layout)) return;
-    brandBanner.dataset.logoLayout = layout;
-    brandLayoutButtons.forEach((button) => {
-      const active = button.dataset.brandLayout === layout;
-      button.setAttribute('aria-pressed', String(active));
-    });
-  }
-
-  brandLayoutButtons.forEach((button) => {
-    button.addEventListener('click', () => setBrandLayout(button.dataset.brandLayout));
-  });
-
-  // Subtle pointer parallax makes the emblem and wordmark respond as separate layers.
-  if (brandBanner && !reducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    brandBanner.addEventListener('pointermove', (event) => {
-      const bounds = brandBanner.getBoundingClientRect();
-      const x = ((event.clientX - bounds.left) / bounds.width - .5) * 2;
-      const y = ((event.clientY - bounds.top) / bounds.height - .5) * 2;
-      brandBanner.style.setProperty('--wordmark-shift-x', `${(x * 5).toFixed(1)}px`);
-      brandBanner.style.setProperty('--wordmark-shift-y', `${(y * 3).toFixed(1)}px`);
-      brandBanner.style.setProperty('--emblem-shift-x', `${(-x * 9).toFixed(1)}px`);
-      brandBanner.style.setProperty('--emblem-shift-y', `${(-y * 6).toFixed(1)}px`);
-    }, { passive: true });
-
-    brandBanner.addEventListener('pointerleave', () => {
-      brandBanner.style.setProperty('--wordmark-shift-x', '0px');
-      brandBanner.style.setProperty('--wordmark-shift-y', '0px');
-      brandBanner.style.setProperty('--emblem-shift-x', '0px');
-      brandBanner.style.setProperty('--emblem-shift-y', '0px');
-    }, { passive: true });
-  }
-
   function setDrawer(open) {
     nav.classList.toggle('is-open', open);
     scrim.classList.toggle('is-visible', open);

@@ -3038,25 +3038,15 @@ main > .section::after {
   animation: wordmark-reveal 1.15s cubic-bezier(.2,.7,.2,1) .98s both;
 }
 
-.listen-section.is-in-view .brand-layout-picker {
-  /* Keep the arrangement controls out of the way until the complete identity reveal ends. */
-  animation: picker-reveal .7s ease 2.18s both;
-}
-
 @keyframes emblem-bloom {
   from { opacity: 0; scale: .68; rotate: -9deg; }
-  to { opacity: .47; scale: 1; rotate: 0deg; }
+  to { opacity: .58; scale: 1; rotate: 0deg; }
 }
 
 @keyframes wordmark-reveal {
   0% { opacity: 0; clip-path: inset(0 50% 0 50%); scale: .94; }
   55% { opacity: 1; clip-path: inset(0 8% 0 8%); scale: 1.015; }
   100% { opacity: 1; clip-path: inset(0 0 0 0); scale: 1; }
-}
-
-@keyframes picker-reveal {
-  from { opacity: 0; translate: 0 8px; }
-  to { opacity: 1; translate: 0 0; }
 }
 
 .footer-hindi-mark {
@@ -3225,5 +3215,94 @@ main > .section::after {
 
   #brand-banner[data-logo-layout="stacked"] img.brand-english {
     width: min(88vw, 370px) !important;
+  }
+}
+
+
+/* Final logo direction: one oversized English name with the emblem clearly visible behind it. */
+.listen-section .brand-banner {
+  height: clamp(360px, 38vw, 520px) !important;
+  pointer-events: none !important;
+}
+
+.listen-section .brand-banner .brand-watermark {
+  left: 50% !important;
+  top: 50% !important;
+  width: clamp(260px, 28vw, 430px) !important;
+  opacity: .58 !important;
+  filter: contrast(1.14);
+  transform: translate(-50%, -50%) !important;
+  translate: none !important;
+  scale: 1 !important;
+  rotate: 0deg !important;
+  transition: none !important;
+  z-index: 0 !important;
+}
+
+.listen-section .brand-banner img.brand-english {
+  left: 50% !important;
+  top: 50% !important;
+  width: clamp(660px, 84vw, 1320px) !important;
+  max-width: calc(100% - 12px) !important;
+  transform: translate(-50%, -50%) !important;
+  translate: none !important;
+  scale: 1 !important;
+  transition: none !important;
+  z-index: 1 !important;
+}
+
+/* The Hindi signature also gets a wider footer stage. */
+.footer-hindi-mark {
+  width: min(100%, 1500px) !important;
+}
+
+.footer-hindi-mark img {
+  width: min(100%, 1400px) !important;
+}
+
+/* Tablet and mobile: keep the same centered horizontal logo arrangement. */
+@media (max-width: 980px) and (min-width: 621px) {
+  .listen-section .brand-banner {
+    height: clamp(260px, 34vw, 360px) !important;
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: clamp(170px, 23vw, 250px) !important;
+    opacity: .54 !important;
+  }
+
+  .listen-section .brand-banner img.brand-english {
+    width: min(92vw, 900px) !important;
+    max-width: calc(100% - 14px) !important;
+  }
+
+  .footer-hindi-mark img {
+    width: min(100%, 1100px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .listen-section .brand-banner {
+    height: clamp(154px, 40vw, 190px) !important;
+  }
+
+  .listen-section .brand-banner .brand-watermark {
+    width: clamp(100px, 29vw, 145px) !important;
+    opacity: .52 !important;
+  }
+
+  .listen-section .brand-banner img.brand-english {
+    width: min(97vw, 480px) !important;
+    max-width: calc(100% - 2px) !important;
+  }
+
+  .footer-hindi-mark img {
+    width: min(100%, 500px) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .listen-section .brand-banner img.brand-english {
+    width: min(98vw, 350px) !important;
   }
 }
