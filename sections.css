@@ -3034,11 +3034,13 @@ main > .section::after {
 }
 
 .listen-section.is-in-view .brand-banner img.brand-english {
-  animation: wordmark-reveal 1.15s cubic-bezier(.2,.7,.2,1) .12s both;
+  /* Wait for the emblem bloom to finish, then reveal the English name over it. */
+  animation: wordmark-reveal 1.15s cubic-bezier(.2,.7,.2,1) .98s both;
 }
 
 .listen-section.is-in-view .brand-layout-picker {
-  animation: picker-reveal .7s ease .72s both;
+  /* Keep the arrangement controls out of the way until the complete identity reveal ends. */
+  animation: picker-reveal .7s ease 2.18s both;
 }
 
 @keyframes emblem-bloom {
