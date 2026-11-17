@@ -85,6 +85,7 @@ def make_wordmark() -> tuple[int, int]:
     alpha = ImageChops.darker(crop.getchannel("A"), alpha_from_luminance)
     cleaned = Image.new("RGBA", crop.size, (0, 0, 0, 0))
     cleaned.putalpha(alpha)
+    # Export at 1200px so the enlarged masthead remains sharp on wide displays.
     output_width = 1200
     output_height = max(1, round(cleaned.height * output_width / cleaned.width))
     cleaned = cleaned.resize((output_width, output_height), RESAMPLE)
