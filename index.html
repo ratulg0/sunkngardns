@@ -46,10 +46,16 @@
 
   <main id="main">
     <section class="section listen-section" id="listen" aria-labelledby="listen-title">
-      <div class="brand-banner" aria-label="SUNKNGARDNS English wordmark with emblem">
+      <div class="brand-banner" id="brand-banner" data-logo-layout="horizontal" aria-label="SUNKNGARDNS English wordmark with emblem">
         <img class="brand-watermark" src="assets/optimized/band-logo.webp" alt="" aria-hidden="true" width="512" height="580" decoding="async">
         
-        <img class="brand-english" id="english-wordmark" src="assets/optimized/brand-wordmark.webp" alt="sunkngardns" width="800" height="292" fetchpriority="high" decoding="async">
+        <img class="brand-english" id="english-wordmark" src="assets/optimized/brand-wordmark.webp" alt="sunkngardns" width="1200" height="438" fetchpriority="high" decoding="async">
+      </div>
+      <div class="brand-layout-picker" role="group" aria-label="Logo arrangement" aria-controls="brand-banner">
+        <span class="brand-layout-caption">ARRANGEMENT</span>
+        <button type="button" data-brand-layout="stacked" aria-pressed="false">STACKED</button>
+        <button type="button" data-brand-layout="compact" aria-pressed="false">COMPACT</button>
+        <button type="button" data-brand-layout="horizontal" aria-pressed="true">HORIZONTAL</button>
       </div>
 <div class="listen-layout">
         <div class="listen-copy">

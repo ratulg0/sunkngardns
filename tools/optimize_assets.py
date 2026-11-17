@@ -85,7 +85,7 @@ def make_wordmark() -> tuple[int, int]:
     alpha = ImageChops.darker(crop.getchannel("A"), alpha_from_luminance)
     cleaned = Image.new("RGBA", crop.size, (0, 0, 0, 0))
     cleaned.putalpha(alpha)
-    output_width = 800
+    output_width = 1200
     output_height = max(1, round(cleaned.height * output_width / cleaned.width))
     cleaned = cleaned.resize((output_width, output_height), RESAMPLE)
     save_webp(cleaned, "brand-wordmark.webp", quality=100, lossless=True)
@@ -93,7 +93,7 @@ def make_wordmark() -> tuple[int, int]:
     index_path = ROOT / "index.html"
     markup = index_path.read_text(encoding="utf-8")
     markup, count = re.subn(
-        r'(<img class="brand-english" id="english-wordmark" src="assets/optimized/brand-wordmark\.webp" alt="sunkngardns" width="800" height=")\d+(")',
+        r'(<img class="brand-english" id="english-wordmark" src="assets/optimized/brand-wordmark\.webp" alt="sunkngardns" width="1200" height=")\d+(")',
         rf'\g<1>{output_height}\g<2>',
         markup,
         count=1,
