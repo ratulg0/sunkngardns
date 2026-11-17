@@ -63,6 +63,25 @@
   const listenArt = listenSection?.querySelector('.listen-art');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Wait for both masthead images to decode before animating, preventing decode jank.
+  const brandBanner = document.querySelector('.brand-banner');
+  const brandImages = brandBanner ? [...brandBanner.querySelectorAll('img')] : [];
+  const brandAssetsDecoded = Promise.all(brandImages.map((image) => {
+    if (typeof image.decode !== 'function') return Promise.resolve();
+    return image.decode().catch(() => undefined);
+  }));
+
+  if (brandBanner) {
+    brandAssetsDecoded.then(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          brandBanner.classList.remove('brand-loading');
+          brandBanner.classList.add('brand-ready');
+        });
+      });
+    });
+  }
+
   if (listenSection && listenArt && !reducedMotion) {
     let artFrame = 0;
     let touchResetTimer = 0;

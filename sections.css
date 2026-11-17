@@ -3229,8 +3229,6 @@ main > .section::after {
   filter: contrast(1.14);
   transform: translate(-50%, -50%) !important;
   translate: none !important;
-  scale: 1 !important;
-  rotate: 0deg !important;
   transition: none !important;
   z-index: 0 !important;
 }
@@ -3242,7 +3240,6 @@ main > .section::after {
   max-width: calc(100% - 12px) !important;
   transform: translate(-50%, -50%) !important;
   translate: none !important;
-  scale: 1 !important;
   transition: none !important;
   z-index: 1 !important;
 }
@@ -3527,5 +3524,74 @@ main > .section::after {
   48% {
     filter: saturate(1.3) brightness(1.12);
     scale: 1.1 1.12;
+  }
+}
+
+
+/* Smooth sequential masthead reveal: decode first, bloom emblem, then settle wordmark. */
+.brand-banner.brand-loading .brand-watermark,
+.brand-banner.brand-loading img.brand-english {
+  opacity: 0;
+}
+
+.listen-section.is-in-view .brand-banner.brand-ready .brand-watermark {
+  animation: emblem-bloom-smooth 1.05s cubic-bezier(.16, 1, .3, 1) both;
+  will-change: opacity, scale, rotate;
+  backface-visibility: hidden;
+}
+
+.listen-section.is-in-view .brand-banner.brand-ready img.brand-english {
+  animation: wordmark-reveal-smooth 1.18s cubic-bezier(.16, 1, .3, 1) .78s both;
+  will-change: opacity, scale;
+  backface-visibility: hidden;
+}
+
+@keyframes emblem-bloom-smooth {
+  0% {
+    opacity: 0;
+    scale: .86;
+    rotate: -4deg;
+  }
+  72% {
+    opacity: .55;
+    scale: 1.025;
+    rotate: .5deg;
+  }
+  100% {
+    opacity: .55;
+    scale: 1;
+    rotate: 0deg;
+  }
+}
+
+@keyframes wordmark-reveal-smooth {
+  0% {
+    opacity: 0;
+    scale: .975;
+  }
+  68% {
+    opacity: 1;
+    scale: 1.012;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+/* Honour reduced-motion preferences without delaying or hiding the identity. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-banner.brand-loading .brand-watermark,
+  .brand-banner.brand-loading img.brand-english {
+    opacity: 1;
+  }
+
+  .listen-section.is-in-view .brand-banner.brand-ready .brand-watermark,
+  .listen-section.is-in-view .brand-banner.brand-ready img.brand-english {
+    animation: none !important;
+    opacity: 1 !important;
+    scale: 1 !important;
+    rotate: 0deg !important;
+    will-change: auto;
   }
 }
